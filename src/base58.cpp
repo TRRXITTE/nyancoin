@@ -251,9 +251,13 @@ bool CBitcoinAddress::IsValid() const
 
 bool CBitcoinAddress::IsValid(const CChainParams& params) const
 {
+    static const std::vector<unsigned char> legacyPubkey(1, 30);  // Dogecoin-style mainnet prefixes
+    static const std::vector<unsigned char> legacyScript(1, 22);
     bool fCorrectSize = vchData.size() == 20;
     bool fKnownVersion = vchVersion == params.Base58Prefix(CChainParams::PUBKEY_ADDRESS) ||
-                         vchVersion == params.Base58Prefix(CChainParams::SCRIPT_ADDRESS);
+                         vchVersion == params.Base58Prefix(CChainParams::SCRIPT_ADDRESS) ||
+                         vchVersion == legacyPubkey ||
+                         vchVersion == legacyScript;
     return fCorrectSize && fKnownVersion;
 }
 
@@ -263,9 +267,9 @@ CTxDestination CBitcoinAddress::Get() const
         return CNoDestination();
     uint160 id;
     memcpy(&id, &vchData[0], 20);
-    if (vchVersion == Params().Base58Prefix(CChainParams::PUBKEY_ADDRESS))
+    if (vchVersion == Params().Base58Prefix(CChainParams::PUBKEY_ADDRESS) || vchVersion == std::vector<unsigned char>(1, 30))
         return CKeyID(id);
-    else if (vchVersion == Params().Base58Prefix(CChainParams::SCRIPT_ADDRESS))
+    else if (vchVersion == Params().Base58Prefix(CChainParams::SCRIPT_ADDRESS) || vchVersion == std::vector<unsigned char>(1, 22))
         return CScriptID(id);
     else
         return CNoDestination();
@@ -273,7 +277,8 @@ CTxDestination CBitcoinAddress::Get() const
 
 bool CBitcoinAddress::GetKeyID(CKeyID& keyID) const
 {
-    if (!IsValid() || vchVersion != Params().Base58Prefix(CChainParams::PUBKEY_ADDRESS))
+    static const std::vector<unsigned char> legacyPubkey(1, 30);
+    if (!IsValid() || (vchVersion != Params().Base58Prefix(CChainParams::PUBKEY_ADDRESS) && vchVersion != legacyPubkey))
         return false;
     uint160 id;
     memcpy(&id, &vchData[0], 20);
@@ -283,7 +288,8 @@ bool CBitcoinAddress::GetKeyID(CKeyID& keyID) const
 
 bool CBitcoinAddress::IsScript() const
 {
-    return IsValid() && vchVersion == Params().Base58Prefix(CChainParams::SCRIPT_ADDRESS);
+    static const std::vector<unsigned char> legacyScript(1, 22);
+    return IsValid() && (vchVersion == Params().Base58Prefix(CChainParams::SCRIPT_ADDRESS) || vchVersion == legacyScript);
 }
 
 void CBitcoinSecret::SetKey(const CKey& vchSecret)
@@ -305,7 +311,8 @@ CKey CBitcoinSecret::GetKey()
 bool CBitcoinSecret::IsValid() const
 {
     bool fExpectedFormat = vchData.size() == 32 || (vchData.size() == 33 && vchData[32] == 1);
-    bool fCorrectVersion = vchVersion == Params().Base58Prefix(CChainParams::SECRET_KEY);
+    static const std::vector<unsigned char> legacySecret(1, 158);
+    bool fCorrectVersion = vchVersion == Params().Base58Prefix(CChainParams::SECRET_KEY) || vchVersion == legacySecret;
     return fExpectedFormat && fCorrectVersion;
 }
 

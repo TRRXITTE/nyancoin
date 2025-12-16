@@ -124,7 +124,7 @@ public:
 
         // Blocks 145000 - 371336 are Digishield without AuxPoW
         digishieldConsensus = consensus;
-        digishieldConsensus.nHeightEffective = 1;
+        digishieldConsensus.nHeightEffective = 145000;
         digishieldConsensus.fSimplifiedRewards = true;
         digishieldConsensus.fDigishieldDifficultyCalculation = true;
         digishieldConsensus.nPowTargetTimespan = 60; // post-digishield: 1 minute
@@ -132,13 +132,13 @@ public:
 
         // Blocks 371337+ are AuxPoW
         auxpowConsensus = digishieldConsensus;
-        auxpowConsensus.nHeightEffective = 1;
+        auxpowConsensus.nHeightEffective = 371337;
         auxpowConsensus.fAllowLegacyBlocks = false;
 
         // Assemble the binary search tree of consensus parameters
-        pConsensusRoot = &digishieldConsensus;
+        pConsensusRoot = &auxpowConsensus;
+        auxpowConsensus.pLeft = &digishieldConsensus;
         digishieldConsensus.pLeft = &consensus;
-        digishieldConsensus.pRight = &auxpowConsensus;
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -263,7 +263,7 @@ public:
 
         // Blocks 145000 - 157499 are Digishield without minimum difficulty on all blocks
         digishieldConsensus = consensus;
-        digishieldConsensus.nHeightEffective = 1;
+        digishieldConsensus.nHeightEffective = 145000;
         digishieldConsensus.nPowTargetTimespan = 60; // post-digishield: 1 minute
         digishieldConsensus.fDigishieldDifficultyCalculation = true;
         digishieldConsensus.fSimplifiedRewards = true;
@@ -272,21 +272,21 @@ public:
 
         // Blocks 157500 - 158099 are Digishield with minimum difficulty on all blocks
         minDifficultyConsensus = digishieldConsensus;
-        minDifficultyConsensus.nHeightEffective = 1;
+        minDifficultyConsensus.nHeightEffective = 157500;
         minDifficultyConsensus.fPowAllowDigishieldMinDifficultyBlocks = true;
         minDifficultyConsensus.fPowAllowMinDifficultyBlocks = true;
 
         // Enable AuxPoW at 158100
         auxpowConsensus = minDifficultyConsensus;
-        auxpowConsensus.nHeightEffective = 1;
+        auxpowConsensus.nHeightEffective = 158100;
         auxpowConsensus.fPowAllowDigishieldMinDifficultyBlocks = true;
         auxpowConsensus.fAllowLegacyBlocks = false;
 
         // Assemble the binary search tree of parameters
-        pConsensusRoot = &digishieldConsensus;
+        pConsensusRoot = &auxpowConsensus;
+        auxpowConsensus.pLeft = &minDifficultyConsensus;
+        minDifficultyConsensus.pLeft = &digishieldConsensus;
         digishieldConsensus.pLeft = &consensus;
-        digishieldConsensus.pRight = &minDifficultyConsensus;
-        minDifficultyConsensus.pRight = &auxpowConsensus;
 
         pchMessageStart[0] = 0xc3;
         pchMessageStart[1] = 0xc3;
@@ -401,9 +401,9 @@ public:
         auxpowConsensus.nHeightEffective = 20;
 
         // Assemble the binary search tree of parameters
+        pConsensusRoot = &auxpowConsensus;
+        auxpowConsensus.pLeft = &digishieldConsensus;
         digishieldConsensus.pLeft = &consensus;
-        digishieldConsensus.pRight = &auxpowConsensus;
-        pConsensusRoot = &digishieldConsensus;
 
         pchMessageStart[0] = 0xfa;
         pchMessageStart[1] = 0xbf;

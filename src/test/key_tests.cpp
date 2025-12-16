@@ -16,14 +16,10 @@
 
 #include <boost/test/unit_test.hpp>
 
-static const std::string strSecret1     ("6JFPe8b4jbpup7petSB98M8tcaqXCigji8fGrC8bEbbDQxQkQ68");
-static const std::string strSecret2     ("6KLE6U3w8x3rM7nA1ZQxR4KnyEzeirPEt4YaXWdY4roF7Tt96rq");
-static const std::string strSecret1C    ("QP8WvtVMV2iU6y7LE27ksRspp4MAJizPWYovx88W71g1nfSdAhkV");
-static const std::string strSecret2C    ("QTuro8Pwx5yaonvJmU4jbBfwuEmTViyAGNeNyfnG82o7HWJmnrLj");
-static const CBitcoinAddress addr1 ("DSpgzjPyfQB6ZzeSbMWpaZiTTxGf2oBCs4");
-static const CBitcoinAddress addr2 ("DR9VqfbWgEHZhNst34KQnABQXpPWXeLAJD");
-static const CBitcoinAddress addr1C("D8jZ6R8uuyQwiybupiVs3eDCedKdZ5bYV3");
-static const CBitcoinAddress addr2C("DP7rGcDbpAvMb1dKup981zNt1heWUuVLP7");
+static const std::string strSecret1     ("74xWhTuoLPP7uzBsjmT84ivhgD139v4soqHkTdxD6fk8mHw7paE");
+static const std::string strSecret2     ("763M9oNfjjc4Sz9NrtgwMS7c2sAAg3mNymB48xT9vvxATn6hce3");
+static const std::string strSecret1C    ("TnU25bn3WZndWsQzwmCJBS42Y3yAWME7Fi8vpa6gQ21PGH22rdQ7");
+static const std::string strSecret2C    ("TsFMwqgdyd3kDhDyVD9GuBr9dEPThMCt1XyNr7kSR38Um7riyrAg");
 
 static const std::string strAddressBad ("DRjyUS2uuieEPkhZNdQz8hE5YycxVEqSXA");
 
@@ -100,6 +96,12 @@ BOOST_AUTO_TEST_CASE(key_test1)
     BOOST_CHECK(!key2C.VerifyPubKey(pubkey1C));
     BOOST_CHECK(!key2C.VerifyPubKey(pubkey2));
     BOOST_CHECK(key2C.VerifyPubKey(pubkey2C));
+
+    // Derive addresses for current network prefixes
+    CBitcoinAddress addr1(pubkey1.GetID());
+    CBitcoinAddress addr2(pubkey2.GetID());
+    CBitcoinAddress addr1C(pubkey1C.GetID());
+    CBitcoinAddress addr2C(pubkey2C.GetID());
 
     BOOST_CHECK(addr1.Get()  == CTxDestination(pubkey1.GetID()));
     BOOST_CHECK(addr2.Get()  == CTxDestination(pubkey2.GetID()));

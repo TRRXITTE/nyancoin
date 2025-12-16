@@ -18,12 +18,12 @@ from base58 import b58encode, b58decode, b58encode_chk, b58decode_chk, b58chars
 import random
 from binascii import b2a_hex
 
-# key types
-PUBKEY_ADDRESS = 30
-SCRIPT_ADDRESS = 22
+# key types (match current chainparams prefixes)
+PUBKEY_ADDRESS = 53
+SCRIPT_ADDRESS = 65
 PUBKEY_ADDRESS_TEST = 113
 SCRIPT_ADDRESS_TEST = 196
-PRIVKEY = 158
+PRIVKEY = 181
 PRIVKEY_TEST = 241
 
 metadata_keys = ['isPrivkey', 'isTestnet', 'addrType', 'isCompressed']
@@ -126,4 +126,3 @@ if __name__ == '__main__':
     data = list(islice(uiter(), count))
     json.dump(data, sys.stdout, sort_keys=True, indent=4)
     sys.stdout.write('\n')
-

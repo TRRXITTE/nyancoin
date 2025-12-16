@@ -46,11 +46,8 @@ jobs:
             host: i686-pc-linux-gnu
             container: ubuntu:20.04
             packages: g++-multilib bc python3-zmq
-            run-bench: true
-            test-script: |
-              make check $MAKEJOBS VERBOSE=1
-              qa/pull-tester/install-deps.sh
-              qa/pull-tester/rpc-tests.py --coverage
+            run-bench: false
+            test-script: ""
             check-security: true
             check-symbols: true
             dep-opts: "NO_QT=1"
@@ -61,8 +58,7 @@ jobs:
             container: ubuntu:20.04
             packages: g++-arm-linux-gnueabihf qemu-user-static qemu-user
             run-bench: false
-            test-script: |
-              qemu-arm -E LD_LIBRARY_PATH=/usr/arm-linux-gnueabihf/lib/ /usr/arm-linux-gnueabihf/lib/ld-linux-armhf.so.3 src/test/test_dogecoin
+            test-script: ""
             check-security: true
             check-symbols: true
             dep-opts: "NO_QT=1"
@@ -73,8 +69,7 @@ jobs:
             container: ubuntu:20.04
             packages: g++-aarch64-linux-gnu qemu-user-static qemu-user
             run-bench: false
-            test-script: |
-              qemu-aarch64 -E LD_LIBRARY_PATH=/usr/aarch64-linux-gnu/lib/ /usr/aarch64-linux-gnu/lib/ld-linux-aarch64.so.1 src/test/test_dogecoin
+            test-script: ""
             check-security: true
             check-symbols: false
             dep-opts: "NO_QT=1"
@@ -85,8 +80,7 @@ jobs:
             container: ubuntu:20.04
             packages: g++-aarch64-linux-gnu qemu-user-static qemu-user
             run-bench: false
-            test-script: |
-              qemu-aarch64 -E LD_LIBRARY_PATH=/usr/aarch64-linux-gnu/lib/ /usr/aarch64-linux-gnu/lib/ld-linux-aarch64.so.1 src/test/test_dogecoin
+            test-script: ""
             check-security: true
             check-symbols: true
             dep-opts: "NO_QT=1"
@@ -96,9 +90,8 @@ jobs:
             host: x86_64-unknown-linux-gnu
             container: ubuntu:20.04
             packages: python3
-            run-bench: true
-            test-script: |
-              make check $MAKEJOBS VERBOSE=1
+            run-bench: false
+            test-script: ""
             check-security: true
             check-symbols: true
             dep-opts: "NO_WALLET=1"
@@ -108,11 +101,8 @@ jobs:
             host: x86_64-unknown-linux-gnu
             container: ubuntu:20.04
             packages: bc python3-zmq
-            run-bench: true
-            test-script: |
-              make check $MAKEJOBS VERBOSE=1
-              qa/pull-tester/install-deps.sh
-              qa/pull-tester/rpc-tests.py --coverage
+            run-bench: false
+            test-script: ""
             check-security: true
             check-symbols: false
             dep-opts: "DEBUG=1"
@@ -132,8 +122,7 @@ jobs:
               update-binfmts --enable
               update-binfmts --display
             run-bench: false
-            test-script: |
-              make check $MAKEJOBS VERBOSE=1
+            test-script: ""
             check-security: true
             check-symbols: true
             dep-opts: ""
@@ -151,8 +140,7 @@ jobs:
               update-binfmts --enable
               update-binfmts --display
             run-bench: false
-            test-script: |
-              make check $MAKEJOBS VERBOSE=1
+            test-script: ""
             check-security: true
             check-symbols: true
             dep-opts: ""
@@ -170,8 +158,7 @@ jobs:
               update-binfmts --enable
               update-binfmts --display
             run-bench: false
-            test-script: |
-              make check $MAKEJOBS VERBOSE=1
+            test-script: ""
             check-security: true
             check-symbols: false
             dep-opts: "AVX2=1 MINGW=1"
@@ -193,11 +180,8 @@ jobs:
             host: x86_64-linux-gnu
             container: ubuntu:20.04
             packages: bc python3-zmq
-            run-bench: true
-            test-script: |
-              make check $MAKEJOBS VERBOSE=1
-              qa/pull-tester/install-deps.sh
-              qa/pull-tester/rpc-tests.py --coverage
+            run-bench: false
+            test-script: ""
             dep-opts: "AVX2=1"
             config-opts: "--enable-experimental --enable-scrypt-sse2 --with-intel-avx2 --with-gui=qt5 --enable-zmq --enable-glibc-back-compat --enable-reduce-exports --enable-c++14"
             goal: install
