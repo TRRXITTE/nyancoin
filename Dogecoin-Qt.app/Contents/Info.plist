@@ -11,19 +11,19 @@
   </array>
 
   <key>CFBundleIconFile</key>
-  <string>dogecoin.icns</string>
+  <string>nintondo.icns</string>
 
   <key>CFBundlePackageType</key>
   <string>APPL</string>
 
   <key>CFBundleGetInfoString</key>
-  <string>1.15.01, Copyright © 2009-2026 The Nyancoin TRRXITTE developers</string>
+  <string>0.100.02, Copyright © 2009-2026 The Nintondo Nyan developers</string>
 
   <key>CFBundleShortVersionString</key>
-  <string>1.15.01</string>
+  <string>0.100.02</string>
 
   <key>CFBundleVersion</key>
-  <string>1.15.01</string>
+  <string>0.100.02</string>
 
   <key>CFBundleSignature</key>
   <string>????</string>
@@ -38,7 +38,7 @@
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>com.dogecoin.Dogecoin-Qt</string>
+  <string>com.trrxitte.Nintondo-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,10 +46,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>com.dogecoin.DogecoinPayment</string>
+      <string>com.nintondo.Payment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>dogecoin</string>
+        <string>nintondo</string>
       </array>
     </dict>
   </array>
@@ -58,9 +58,9 @@
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>com.dogecoin.paymentrequest</string>
+      <string>com.nintono.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>Dogecoin payment request</string>
+      <string>Nintondo Nyan payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>
@@ -68,10 +68,10 @@
       <key>UTTypeTagSpecification</key>
       <dict>
         <key>public.mime-type</key>
-        <string>application/dogecoin-paymentrequest</string>
+        <string>application/nintondo-paymentrequest</string>
         <key>public.filename-extension</key>
         <array>
-          <string>dogecoinpaymentrequest</string>
+          <string>nintondopaymentrequest</string>
         </array>
       </dict>
     </dict>
@@ -84,7 +84,7 @@
       <string>Editor</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>com.dogecoin.paymentrequest</string>
+        <string>com.nintondo.paymentrequest</string>
       </array>
       <key>LSHandlerRank</key>
       <string>Owner</string>

@@ -106,8 +106,8 @@ using namespace std;
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char * const BITCOIN_CONF_FILENAME = "dogecoin.conf";
-const char * const BITCOIN_PID_FILENAME = "dogecoind.pid";
+const char * const BITCOIN_CONF_FILENAME = "nintondo.conf";
+const char * const BITCOIN_PID_FILENAME = "nintondod.pid";
 
 CCriticalSection cs_args;
 map<string, string> mapArgs;
@@ -465,7 +465,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "dogecoin";
+    const char* pszModule = "nintondo";
 #endif
     if (pex)
         return strprintf(
@@ -484,13 +484,13 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 
 fs::path GetDefaultDataDir()
 {
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Bitcoin
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Bitcoin
-    // Mac: ~/Library/Application Support/Bitcoin
-    // Unix: ~/.bitcoin
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Nintondo
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Nintondo
+    // Mac: ~/Library/Application Support/Nintondo
+    // Unix: ~/.nintondon
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Dogecoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "Nintondo";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -500,10 +500,10 @@ fs::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/Dogecoin";
+    return pathRet / "Library/Application Support/Nintondo";
 #else
     // Unix
-    return pathRet / ".dogecoin";
+    return pathRet / ".nintondo";
 #endif
 #endif
 }

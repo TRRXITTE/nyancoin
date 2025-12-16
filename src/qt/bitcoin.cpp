@@ -49,6 +49,7 @@
 #include <QLocale>
 #include <QMessageBox>
 #include <QSettings>
+#include <QFont>
 #include <QThread>
 #include <QTimer>
 #include <QTranslator>
@@ -294,7 +295,7 @@ void BitcoinCore::shutdown()
 }
 
 static int qt_argc = 1;
-static const char* qt_argv = "dogecoin-qt";
+static const char* qt_argv = "nintondo-qt";
 
 BitcoinApplication::BitcoinApplication():
     QApplication(qt_argc, const_cast<char **>(&qt_argv)),
@@ -320,6 +321,10 @@ BitcoinApplication::BitcoinApplication():
     if (!platformStyle) // Fall back to "other" if specified name not found
         platformStyle = PlatformStyle::instantiate("other");
     assert(platformStyle);
+
+    // Set application-wide font preference
+    QFont appFont("Roboto", 11, QFont::Medium);
+    QApplication::setFont(appFont);
 }
 
 BitcoinApplication::~BitcoinApplication()

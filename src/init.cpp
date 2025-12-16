@@ -803,7 +803,7 @@ void InitLogging()
     fLogIPs = GetBoolArg("-logips", DEFAULT_LOGIPS);
 
     LogPrintf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    LogPrintf("Dogecoin version %s\n", FormatFullVersion());
+    LogPrintf("Nintondo Nyan version %s\n", FormatFullVersion());
 }
 
 namespace { // Variables internal to initialization process only
