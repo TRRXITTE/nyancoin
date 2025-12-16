@@ -1,4 +1,4 @@
-name: Continuous Integration (macOS only)
+name: Continuous Integration
 
 on:
   push:
@@ -11,80 +11,145 @@ on:
       - '**/*.md'
 
 jobs:
-  macos:
-    name: x86_64-macos
-    runs-on: ubuntu-24.04
-    container:
-      image: ubuntu:22.04
+  build:
+    name: ${{ matrix.name }}
 
     env:
       MAKEJOBS: "-j32"
+      CHECK_DOC: "0"
+      CCACHE_SIZE: "100M"
+      CCACHE_TEMPDIR: /tmp/.ccache-temp
+      CCACHE_COMPRESS: "1"
+      PYTHON_DEBUG: "1"
+      CACHE_NONCE: "1"
+      WINEDEBUG: fixme-all
+      WINEPREFIX: /tmp/wineprefix/
       SDK_URL: https://depends.dogecoincore.org
+
+    strategy:
+      fail-fast: false
+      matrix:
+        name:
+          - x86_64-macos
+        include:
+          - name: x86_64-macos
+            host: x86_64-apple-darwin11
+            container: ubuntu:20.04
+            packages: cmake imagemagick libcap-dev librsvg2-bin libz-dev libbz2-dev libtiff-tools libtinfo5 xorriso
+            run-bench: false
+            check-security: true
+            check-symbols: false
+            dep-opts: ""
+            config-opts: "--with-gui=qt5 --disable-tests"
+            goal: deploy
+            sdk: 10.11
+            sdk-shasum: "bec9d089ebf2e2dd59b1a811a38ec78ebd5da18cbbcd6ab39d1e59f64ac5033f"
+
+    runs-on: ubuntu-24.04
+    container:
+      image: ${{ matrix.container }}
+      options: ${{ matrix.container-options == '' && '-e 1DOGE=1DOGE' || matrix.container-options }}
 
     steps:
       - name: Configure container
         run: |
           ln -snf /usr/share/zoneinfo/Etc/UTC /etc/localtime
           echo Etc/UTC > /etc/timezone
+          mkdir -p $WINEPREFIX
+          uname -a
+
+      - name: Pre install
+        if: ${{ matrix.preinstall }}
+        run: ${{ matrix.preinstall }}
 
       - name: Install packages
         run: |
           apt-get update
-          apt-get install -y build-essential libtool autotools-dev automake pkg-config \
-               bsdmainutils curl ca-certificates ccache git cmake imagemagick \
-               libcap-dev librsvg2-bin libz-dev libbz2-dev libtiff-tools libtinfo5 xorriso
+          apt-get install -y build-essential libtool autotools-dev automake \
+               pkg-config bsdmainutils curl ca-certificates ccache rsync git \
+               procps bison python3 python3-pip python3-setuptools python3-wheel
+          apt-get install -y ${{ matrix.packages }}
+          python3 -m pip install setuptools==70.3.0 --upgrade
+          python3 -m pip install lief
+
+      - name: Post install
+        if: ${{ matrix.postinstall }}
+        run: ${{ matrix.postinstall }}
 
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: SDK cache
+        if: ${{ matrix.sdk }}
         uses: actions/cache@v4
+        env:
+          cache-name: sdk
         with:
           path: ./depends/sdk-sources
-          key: macos-sdk-${{ hashFiles('.github/workflows/ci.yml') }}
+          key: ${{ matrix.name }}-${{ env.cache-name }}-${{ hashFiles('.github/workflows/ci.yml') }}
 
-      - name: Install macOS SDK
+      - name: Install SDK
+        if: ${{ matrix.sdk }}
         env:
-          sdk-filename: MacOSX10.11.sdk.tar.gz
-          sdk-shasum: bec9d089ebf2e2dd59b1a811a38ec78ebd5da18cbbcd6ab39d1e59f64ac5033f
+          sdk-filename: MacOSX${{ matrix.sdk }}.sdk.tar.gz
         run: |
-          mkdir -p ./depends/sdk-sources ./depends/SDKs
-          (echo "${{ env.sdk-shasum }}  depends/sdk-sources/${{ env.sdk-filename }}" | sha256sum -c -) || \
-            curl --location --fail ${{ env.SDK_URL }}/${{ env.sdk-filename }} -o depends/sdk-sources/${{ env.sdk-filename }}
+          mkdir -p ./depends/sdk-sources
+          mkdir -p ./depends/SDKs
+          echo "${{ matrix.sdk-shasum }}  depends/sdk-sources/${{ env.sdk-filename }}" | sha256sum -c || \
+          curl --location --fail $SDK_URL/${{ env.sdk-filename }} -o depends/sdk-sources/${{ env.sdk-filename }} &&\
+          echo "${{ matrix.sdk-shasum }}  depends/sdk-sources/${{ env.sdk-filename }}" | sha256sum -c
           tar -C depends/SDKs -xf depends/sdk-sources/${{ env.sdk-filename }}
 
       - name: Dependency cache
         uses: actions/cache@v4
+        env:
+          cache-name: depends
         with:
           path: ./depends/built
-          key: macos-depends-${{ hashFiles('depends/packages/*', '.github/workflows/ci.yml') }}
+          key: ${{ matrix.name }}-${{ env.cache-name }}-${{ hashFiles('depends/packages/*', '.github/workflows/ci.yml') }}
 
       - name: Build depends
-        run: make $MAKEJOBS -C depends HOST=x86_64-apple-darwin11
+        run: |
+          make $MAKEJOBS -C depends HOST=${{ matrix.host }} ${{ matrix.dep-opts }}
 
-      - name: CCache setup
+      - name: CCache
         uses: actions/cache@v4
+        env:
+          cache-name: ccache
         with:
           path: ~/.ccache
-          key: macos-ccache-${{ hashFiles('**/configure.ac', '.github/workflows/ci.yml') }}
+          key: ${{ matrix.name }}-${{ env.cache-name }}-${{ hashFiles('**/configure.ac', '.github/workflows/ci.yml') }}
 
-      - name: Build Dogecoin (macOS)
+      - name: Build Dogecoin
         run: |
-          depends/x86_64-apple-darwin11/native/bin/ccache --max-size=100M
+          depends/${{ matrix.host }}/native/bin/ccache --max-size=$CCACHE_SIZE
           ./autogen.sh
-          ./configure --prefix=`pwd`/depends/x86_64-apple-darwin11 --with-gui=qt5 --disable-tests --enable-reduce-exports
-          make $MAKEJOBS deploy
+          ./configure --prefix=`pwd`/depends/${{ matrix.host }} ${{ matrix.config-opts }} --enable-reduce-exports || ( cat config.log && false)
+          make $MAKEJOBS ${{ matrix.goal }} || ( echo "Build failure. Verbose build follows." && make ${{ matrix.goal }} V=1 ; false )
 
-      - name: Run unit tests (skip genesis block assertion that fails under some toolchains)
+      - name: Run benchmark
+        if: ${{ matrix.run-bench }}
         run: |
-          src/test/test_dogecoin --log_level=test_suite --run_test=!chainparams_tests/genesis_block || \
-          src/test/test_dogecoin --log_level=test_suite   # fallback: run all if skip syntax not supported
+          src/bench/bench_dogecoin > ${{ matrix.name }}-bench.csv
+          cat ${{ matrix.name }}-bench.csv
 
       - name: Check security
+        if: ${{ matrix.check-security }}
         run: make -C src check-security
 
-      - name: Upload macOS artifact
+      - name: Check symbols
+        if: ${{ matrix.check-symbols }}
+        run: make -C src check-symbols
+
+      - name: Cleanup qa artifacts
+        run: |
+          rm -rf qa/cache || true
+
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: dogecoin-macos-${{ github.sha }}
-          path: dist/Dogecoin-Qt.app
+          name: dogecoin-${{ github.sha }}-${{ matrix.name }}
+          path: |
+            depends/${{ matrix.host }}/bin/dogecoin*
+            dist/Dogecoin-Qt.app
+            ${{ matrix.name }}-bench.csv
