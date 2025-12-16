@@ -10,16 +10,16 @@ define(_COPYRIGHT_HOLDERS,[The %s developers])
 define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Nyancoin TRRXITTE]])
 define(_CURRENT_RELEASE_DATE,[[2025-12-31]])
 define(_EXPECTED_DAYS_TO_NEXT_RELEASE,[350])
-AC_INIT([Nyancoin COr3],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/trrxitte/nyancoin/issues],[nyancoin],[https://nyan.trrxitte.com/])
+AC_INIT([Dogecoin Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/trrxitte/nyancoin/issues],[nyancoin],[https://nyan.trrxitte.com/])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
 BITCOIN_DAEMON_NAME=dogecoind
-BITCOIN_GUI_NAME=nyancoin-qt
-BITCOIN_CLI_NAME=nyancoin-cli
-BITCOIN_TX_NAME=nyancoin-tx
+BITCOIN_GUI_NAME=dogecoin-qt
+BITCOIN_CLI_NAME=dogecoin-cli
+BITCOIN_TX_NAME=dogecoin-tx
 
 AC_CANONICAL_HOST
 
