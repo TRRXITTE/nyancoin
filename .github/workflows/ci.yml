@@ -214,7 +214,6 @@ jobs:
           echo Etc/UTC > /etc/timezone
           mkdir -p $WINEPREFIX
           uname -a
-
       - name: Pre install
         if: ${{ matrix.preinstall }}
         run: ${{ matrix.preinstall }}
@@ -228,7 +227,6 @@ jobs:
           apt-get install -y ${{ matrix.packages }}
           python3 -m pip install setuptools==70.3.0 --upgrade
           python3 -m pip install lief
-
       - name: Post install
         if: ${{ matrix.postinstall }}
         run: ${{ matrix.postinstall }}
@@ -256,7 +254,6 @@ jobs:
           curl --location --fail $SDK_URL/${{ env.sdk-filename }} -o depends/sdk-sources/${{ env.sdk-filename }} &&\
           echo "${{ matrix.sdk-shasum }}  depends/sdk-sources/${{ env.sdk-filename }}" | sha256sum -c
           tar -C depends/SDKs -xf depends/sdk-sources/${{ env.sdk-filename }}
-
       - name: Dependency cache
         uses: actions/cache@v4
         env:
@@ -268,7 +265,6 @@ jobs:
       - name: Build depends
         run: |
           make $MAKEJOBS -C depends HOST=${{ matrix.host }} ${{ matrix.dep-opts }}
-
       - name: CCache
         uses: actions/cache@v4
         env:
@@ -283,13 +279,11 @@ jobs:
           ./autogen.sh
           ./configure --prefix=`pwd`/depends/${{ matrix.host }} ${{ matrix.config-opts }} --enable-reduce-exports || ( cat config.log && false)
           make $MAKEJOBS ${{ matrix.goal }} || ( echo "Build failure. Verbose build follows." && make ${{ matrix.goal }} V=1 ; false )
-
       - name: Run benchmark
         if: ${{ matrix.run-bench }}
         run: |
           src/bench/bench_dogecoin > ${{ matrix.name }}-bench.csv
           cat ${{ matrix.name }}-bench.csv
-
       - name: Run tests
         if: ${{ matrix.test-script }}
         run: ${{ matrix.test-script }}
@@ -305,7 +299,6 @@ jobs:
       - name: Cleanup qa artifacts
         run: |
           rm -rf qa/cache || true
-
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
