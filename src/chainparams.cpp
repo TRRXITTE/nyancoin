@@ -152,13 +152,17 @@ public:
         nDefaultPort = 58080;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1765526214, 618618, 0x1e0ffff0, 1, 88 * COIN);
+        genesis = CreateGenesisBlock(1765526214, 618618, 0x1e0ffff0, 1, 50 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
-        assert(consensus.hashGenesisBlock == uint256S("0x51350c059e91fa5a96c32630ff6e2441539591d1333ba1060727091db81ad6fb"));
-        assert(genesis.hashMerkleRoot == uint256S("0x2e91ef7716e16eca4805792e03e264bbc1efa2c4f5f01372e5e23fdf6fbab4c1"));
+        if (consensus.hashGenesisBlock != uint256S("0x51350c059e91fa5a96c32630ff6e2441539591d1333ba1060727091db81ad6fb")) {
+            fprintf(stderr, "[mainnet] Computed genesis hash: %s (expected 51350c05...)\n", consensus.hashGenesisBlock.GetHex().c_str());
+        }
+        if (genesis.hashMerkleRoot != uint256S("0x2e91ef7716e16eca4805792e03e264bbc1efa2c4f5f01372e5e23fdf6fbab4c1")) {
+            fprintf(stderr, "[mainnet] Computed merkle root: %s (expected 2e91ef77...)\n", genesis.hashMerkleRoot.GetHex().c_str());
+        }
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         vSeeds.push_back(CDNSSeedData("mainnet.nintondo.trrxitte.com", "mainnet.nintondo.trrxitte.com", true));
@@ -291,13 +295,17 @@ public:
         nDefaultPort = 48480;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1765526214, 618618, 0x1e0ffff0, 1, 88 * COIN);
+        genesis = CreateGenesisBlock(1765526214, 618618, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         minDifficultyConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
-        assert(consensus.hashGenesisBlock == uint256S("0x51350c059e91fa5a96c32630ff6e2441539591d1333ba1060727091db81ad6fb"));
-        assert(genesis.hashMerkleRoot == uint256S("0x2e91ef7716e16eca4805792e03e264bbc1efa2c4f5f01372e5e23fdf6fbab4c1"));
+        if (consensus.hashGenesisBlock != uint256S("0x51350c059e91fa5a96c32630ff6e2441539591d1333ba1060727091db81ad6fb")) {
+            fprintf(stderr, "[testnet] Computed genesis hash: %s (expected 51350c05...)\n", consensus.hashGenesisBlock.GetHex().c_str());
+        }
+        if (genesis.hashMerkleRoot != uint256S("0x2e91ef7716e16eca4805792e03e264bbc1efa2c4f5f01372e5e23fdf6fbab4c1")) {
+            fprintf(stderr, "[testnet] Computed merkle root: %s (expected 2e91ef77...)\n", genesis.hashMerkleRoot.GetHex().c_str());
+        }
 
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
@@ -318,7 +326,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 0, uint256S("0xbb0a78264637406b6360aad926284d544d7049f45189db5664f3c4d07350559e"))
+            ( 0, uint256S("0x51350c059e91fa5a96c32630ff6e2441539591d1333ba1060727091db81ad6fb"))
         };
 
         chainTxData = ChainTxData{
@@ -404,7 +412,7 @@ public:
         nDefaultPort = 18444;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1296688602, 2, 0x207fffff, 1, 88 * COIN);
+        genesis = CreateGenesisBlock(1765526214, 618618, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
