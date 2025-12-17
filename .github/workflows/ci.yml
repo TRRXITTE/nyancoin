@@ -46,8 +46,11 @@ jobs:
             host: i686-pc-linux-gnu
             container: ubuntu:20.04
             packages: g++-multilib bc python3-zmq
-            run-bench: false
-            test-script: ""
+            run-bench: true
+            test-script: |
+              make check $MAKEJOBS VERBOSE=1
+              qa/pull-tester/install-deps.sh
+              qa/pull-tester/rpc-tests.py --coverage
             check-security: true
             check-symbols: true
             dep-opts: "NO_QT=1"
@@ -58,7 +61,8 @@ jobs:
             container: ubuntu:20.04
             packages: g++-arm-linux-gnueabihf qemu-user-static qemu-user
             run-bench: false
-            test-script: ""
+            test-script: |
+              qemu-arm -E LD_LIBRARY_PATH=/usr/arm-linux-gnueabihf/lib/ /usr/arm-linux-gnueabihf/lib/ld-linux-armhf.so.3 src/test/test_dogecoin
             check-security: true
             check-symbols: true
             dep-opts: "NO_QT=1"
@@ -69,7 +73,8 @@ jobs:
             container: ubuntu:20.04
             packages: g++-aarch64-linux-gnu qemu-user-static qemu-user
             run-bench: false
-            test-script: ""
+            test-script: |
+              qemu-aarch64 -E LD_LIBRARY_PATH=/usr/aarch64-linux-gnu/lib/ /usr/aarch64-linux-gnu/lib/ld-linux-aarch64.so.1 src/test/test_dogecoin
             check-security: true
             check-symbols: false
             dep-opts: "NO_QT=1"
@@ -80,7 +85,8 @@ jobs:
             container: ubuntu:20.04
             packages: g++-aarch64-linux-gnu qemu-user-static qemu-user
             run-bench: false
-            test-script: ""
+            test-script: |
+              qemu-aarch64 -E LD_LIBRARY_PATH=/usr/aarch64-linux-gnu/lib/ /usr/aarch64-linux-gnu/lib/ld-linux-aarch64.so.1 src/test/test_dogecoin
             check-security: true
             check-symbols: true
             dep-opts: "NO_QT=1"
@@ -90,8 +96,9 @@ jobs:
             host: x86_64-unknown-linux-gnu
             container: ubuntu:20.04
             packages: python3
-            run-bench: false
-            test-script: ""
+            run-bench: true
+            test-script: |
+              make check $MAKEJOBS VERBOSE=1
             check-security: true
             check-symbols: true
             dep-opts: "NO_WALLET=1"
@@ -101,8 +108,11 @@ jobs:
             host: x86_64-unknown-linux-gnu
             container: ubuntu:20.04
             packages: bc python3-zmq
-            run-bench: false
-            test-script: ""
+            run-bench: true
+            test-script: |
+              make check $MAKEJOBS VERBOSE=1
+              qa/pull-tester/install-deps.sh
+              qa/pull-tester/rpc-tests.py --coverage
             check-security: true
             check-symbols: false
             dep-opts: "DEBUG=1"
@@ -112,7 +122,9 @@ jobs:
             host: i686-w64-mingw32
             container: ubuntu:20.04
             container-options: --privileged
-            packages: python3 nsis g++-mingw-w64-i686 bc wine64 wine-binfmt binfmt-support
+            packages: python3 nsis g++-mingw-w64-i686 wine32 bc wine-binfmt binfmt-support
+            preinstall: |
+              dpkg --add-architecture i386
             postinstall: |
               update-alternatives --set i686-w64-mingw32-gcc /usr/bin/i686-w64-mingw32-gcc-posix
               update-alternatives --set i686-w64-mingw32-g++  /usr/bin/i686-w64-mingw32-g++-posix
@@ -120,7 +132,8 @@ jobs:
               update-binfmts --enable
               update-binfmts --display
             run-bench: false
-            test-script: ""
+            test-script: |
+              make check $MAKEJOBS VERBOSE=1
             check-security: true
             check-symbols: true
             dep-opts: ""
@@ -138,7 +151,8 @@ jobs:
               update-binfmts --enable
               update-binfmts --display
             run-bench: false
-            test-script: ""
+            test-script: |
+              make check $MAKEJOBS VERBOSE=1
             check-security: true
             check-symbols: true
             dep-opts: ""
@@ -156,7 +170,8 @@ jobs:
               update-binfmts --enable
               update-binfmts --display
             run-bench: false
-            test-script: ""
+            test-script: |
+              make check $MAKEJOBS VERBOSE=1
             check-security: true
             check-symbols: false
             dep-opts: "AVX2=1 MINGW=1"
@@ -178,8 +193,11 @@ jobs:
             host: x86_64-linux-gnu
             container: ubuntu:20.04
             packages: bc python3-zmq
-            run-bench: false
-            test-script: ""
+            run-bench: true
+            test-script: |
+              make check $MAKEJOBS VERBOSE=1
+              qa/pull-tester/install-deps.sh
+              qa/pull-tester/rpc-tests.py --coverage
             dep-opts: "AVX2=1"
             config-opts: "--enable-experimental --enable-scrypt-sse2 --with-intel-avx2 --with-gui=qt5 --enable-zmq --enable-glibc-back-compat --enable-reduce-exports --enable-c++14"
             goal: install
@@ -196,12 +214,12 @@ jobs:
           echo Etc/UTC > /etc/timezone
           mkdir -p $WINEPREFIX
           uname -a
+
       - name: Pre install
         if: ${{ matrix.preinstall }}
         run: ${{ matrix.preinstall }}
 
       - name: Install packages
-        continue-on-error: true
         run: |
           apt-get update
           apt-get install -y build-essential libtool autotools-dev automake \
@@ -210,6 +228,7 @@ jobs:
           apt-get install -y ${{ matrix.packages }}
           python3 -m pip install setuptools==70.3.0 --upgrade
           python3 -m pip install lief
+
       - name: Post install
         if: ${{ matrix.postinstall }}
         run: ${{ matrix.postinstall }}
@@ -237,6 +256,7 @@ jobs:
           curl --location --fail $SDK_URL/${{ env.sdk-filename }} -o depends/sdk-sources/${{ env.sdk-filename }} &&\
           echo "${{ matrix.sdk-shasum }}  depends/sdk-sources/${{ env.sdk-filename }}" | sha256sum -c
           tar -C depends/SDKs -xf depends/sdk-sources/${{ env.sdk-filename }}
+
       - name: Dependency cache
         uses: actions/cache@v4
         env:
@@ -248,6 +268,7 @@ jobs:
       - name: Build depends
         run: |
           make $MAKEJOBS -C depends HOST=${{ matrix.host }} ${{ matrix.dep-opts }}
+
       - name: CCache
         uses: actions/cache@v4
         env:
@@ -262,11 +283,13 @@ jobs:
           ./autogen.sh
           ./configure --prefix=`pwd`/depends/${{ matrix.host }} ${{ matrix.config-opts }} --enable-reduce-exports || ( cat config.log && false)
           make $MAKEJOBS ${{ matrix.goal }} || ( echo "Build failure. Verbose build follows." && make ${{ matrix.goal }} V=1 ; false )
+
       - name: Run benchmark
         if: ${{ matrix.run-bench }}
         run: |
           src/bench/bench_dogecoin > ${{ matrix.name }}-bench.csv
           cat ${{ matrix.name }}-bench.csv
+
       - name: Run tests
         if: ${{ matrix.test-script }}
         run: ${{ matrix.test-script }}
@@ -282,6 +305,7 @@ jobs:
       - name: Cleanup qa artifacts
         run: |
           rm -rf qa/cache || true
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
