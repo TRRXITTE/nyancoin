@@ -15,6 +15,7 @@ define $(package)_preprocess_cmds
   patch -p1 < $($(package)_patch_dir)/clock-unused-nsecs.patch && \
   patch -p1 < $($(package)_patch_dir)/remove_libstd_link.patch && \
   patch -p1 < $($(package)_patch_dir)/0002-disable-pthread_set_name_np.patch && \
+  patch -p1 < $($(package)_patch_dir)/0003-add-condition-variable-include.patch && \
   cp -f $(BASEDIR)/config.guess $(BASEDIR)/config.sub config
 endef
 
