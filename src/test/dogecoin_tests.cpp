@@ -61,41 +61,23 @@ uint64_t expectedMinSubsidy(int height) {
 BOOST_AUTO_TEST_CASE(subsidy_first_100k_test)
 {
     const CChainParams& mainParams = Params(CBaseChainParams::MAIN);
-    CAmount nSum = 0;
-    arith_uint256 prevHash = UintToArith256(uint256S("0"));
-
     for (int nHeight = 0; nHeight <= 100000; nHeight++) {
         const Consensus::Params& params = mainParams.GetConsensus(nHeight);
-        CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, params, ArithToUint256(prevHash));
+        CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, params, ArithToUint256(uint256S("0")));
         BOOST_CHECK(MoneyRange(nSubsidy));
-        BOOST_CHECK(nSubsidy <= 1000000 * COIN);
-        nSum += nSubsidy;
-        // Use nSubsidy to give us some variation in previous block hash, without requiring full block templates
-        prevHash += nSubsidy;
+        BOOST_CHECK_EQUAL(nSubsidy, 400000 * COIN);
     }
-
-    const CAmount expected = 54894174438 * COIN;
-    BOOST_CHECK_EQUAL(expected, nSum);
 }
 
 BOOST_AUTO_TEST_CASE(subsidy_100k_145k_test)
 {
     const CChainParams& mainParams = Params(CBaseChainParams::MAIN);
-    CAmount nSum = 0;
-    arith_uint256 prevHash = UintToArith256(uint256S("0"));
-
     for (int nHeight = 100000; nHeight <= 145000; nHeight++) {
         const Consensus::Params& params = mainParams.GetConsensus(nHeight);
-        CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, params, ArithToUint256(prevHash));
+        CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, params, ArithToUint256(uint256S("0")));
         BOOST_CHECK(MoneyRange(nSubsidy));
-        BOOST_CHECK(nSubsidy <= 500000 * COIN);
-        nSum += nSubsidy;
-        // Use nSubsidy to give us some variation in previous block hash, without requiring full block templates
-        prevHash += nSubsidy;
+        BOOST_CHECK_EQUAL(nSubsidy, 275000 * COIN);
     }
-
-    const CAmount expected = 12349960000 * COIN;
-    BOOST_CHECK_EQUAL(expected, nSum);
 }
 
 // Check the simplified rewards after block 145,000
@@ -104,20 +86,44 @@ BOOST_AUTO_TEST_CASE(subsidy_post_145k_test)
     const CChainParams& mainParams = Params(CBaseChainParams::MAIN);
     const uint256 prevHash = uint256S("0");
 
-    for (int nHeight = 145000; nHeight < 600000; nHeight++) {
+    for (int nHeight = 145000; nHeight < 200000; nHeight++) {
         const Consensus::Params& params = mainParams.GetConsensus(nHeight);
         CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, params, prevHash);
-        CAmount nExpectedSubsidy = (500000 >> (nHeight / 100000)) * COIN;
+        CAmount nExpectedSubsidy = 275000 * COIN;
         BOOST_CHECK(MoneyRange(nSubsidy));
         BOOST_CHECK_EQUAL(nSubsidy, nExpectedSubsidy);
     }
 
-    // Test reward at 600k+ is constant
-    CAmount nConstantSubsidy = GetDogecoinBlockSubsidy(600000, mainParams.GetConsensus(600000), prevHash);
-    BOOST_CHECK_EQUAL(nConstantSubsidy, 10000 * COIN);
+    for (int nHeight = 200000; nHeight < 300000; nHeight++) {
+        const Consensus::Params& params = mainParams.GetConsensus(nHeight);
+        CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, params, prevHash);
+        CAmount nExpectedSubsidy = 144000 * COIN;
+        BOOST_CHECK(MoneyRange(nSubsidy));
+        BOOST_CHECK_EQUAL(nSubsidy, nExpectedSubsidy);
+    }
+
+    for (int nHeight = 300000; nHeight < 400000; nHeight++) {
+        const Consensus::Params& params = mainParams.GetConsensus(nHeight);
+        CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, params, prevHash);
+        CAmount nExpectedSubsidy = 64500 * COIN;
+        BOOST_CHECK(MoneyRange(nSubsidy));
+        BOOST_CHECK_EQUAL(nSubsidy, nExpectedSubsidy);
+    }
+
+    for (int nHeight = 400000; nHeight < 500000; nHeight++) {
+        const Consensus::Params& params = mainParams.GetConsensus(nHeight);
+        CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, params, prevHash);
+        CAmount nExpectedSubsidy = 32000 * COIN;
+        BOOST_CHECK(MoneyRange(nSubsidy));
+        BOOST_CHECK_EQUAL(nSubsidy, nExpectedSubsidy);
+    }
+
+    // Test reward at 500k+ is constant
+    CAmount nConstantSubsidy = GetDogecoinBlockSubsidy(500000, mainParams.GetConsensus(500000), prevHash);
+    BOOST_CHECK_EQUAL(nConstantSubsidy, 45000 * COIN);
 
     nConstantSubsidy = GetDogecoinBlockSubsidy(700000, mainParams.GetConsensus(700000), prevHash);
-    BOOST_CHECK_EQUAL(nConstantSubsidy, 10000 * COIN);
+    BOOST_CHECK_EQUAL(nConstantSubsidy, 45000 * COIN);
 }
 
 BOOST_AUTO_TEST_CASE(get_next_work_difficulty_limit)
