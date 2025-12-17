@@ -63,7 +63,7 @@ BOOST_AUTO_TEST_CASE(subsidy_first_100k_test)
     const CChainParams& mainParams = Params(CBaseChainParams::MAIN);
     for (int nHeight = 0; nHeight <= 100000; nHeight++) {
         const Consensus::Params& params = mainParams.GetConsensus(nHeight);
-        CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, params, ArithToUint256(uint256S("0")));
+        CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, params, uint256S("0"));
         BOOST_CHECK(MoneyRange(nSubsidy));
         BOOST_CHECK_EQUAL(nSubsidy, 400000 * COIN);
     }
@@ -74,7 +74,7 @@ BOOST_AUTO_TEST_CASE(subsidy_100k_145k_test)
     const CChainParams& mainParams = Params(CBaseChainParams::MAIN);
     for (int nHeight = 100000; nHeight <= 145000; nHeight++) {
         const Consensus::Params& params = mainParams.GetConsensus(nHeight);
-        CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, params, ArithToUint256(uint256S("0")));
+        CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, params, uint256S("0"));
         BOOST_CHECK(MoneyRange(nSubsidy));
         BOOST_CHECK_EQUAL(nSubsidy, 275000 * COIN);
     }
