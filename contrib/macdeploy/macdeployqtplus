@@ -312,7 +312,8 @@ def ensureWritable(path):
 
 def ensureRpaths(binaryPath, rpaths):
     try:
-        output = subprocess.check_output(["otool", "-l", binaryPath], universal_newlines=True)
+        otoolbin = os.getenv("OTOOL", "otool")
+        output = subprocess.check_output([otoolbin, "-l", binaryPath], universal_newlines=True)
     except subprocess.CalledProcessError:
         return
 

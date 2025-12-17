@@ -112,9 +112,7 @@ jobs:
             host: i686-w64-mingw32
             container: ubuntu:20.04
             container-options: --privileged
-            packages: python3 nsis g++-mingw-w64-i686 bc wine-binfmt binfmt-support
-            preinstall: |
-              dpkg --add-architecture i386
+            packages: python3 nsis g++-mingw-w64-i686 bc wine64 wine-binfmt binfmt-support
             postinstall: |
               update-alternatives --set i686-w64-mingw32-gcc /usr/bin/i686-w64-mingw32-gcc-posix
               update-alternatives --set i686-w64-mingw32-g++  /usr/bin/i686-w64-mingw32-g++-posix
