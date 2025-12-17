@@ -288,10 +288,10 @@ public:
         minDifficultyConsensus.pLeft = &digishieldConsensus;
         digishieldConsensus.pLeft = &consensus;
 
-        pchMessageStart[0] = 0xc3;
-        pchMessageStart[1] = 0xc3;
-        pchMessageStart[2] = 0xc3;
-        pchMessageStart[3] = 0xc3;
+        pchMessageStart[0] = 0xc4;
+        pchMessageStart[1] = 0xc4;
+        pchMessageStart[2] = 0xc4;
+        pchMessageStart[3] = 0xc4;
         nDefaultPort = 48480;
         nPruneAfterHeight = 1000;
 
@@ -405,7 +405,7 @@ public:
         auxpowConsensus.pLeft = &digishieldConsensus;
         digishieldConsensus.pLeft = &consensus;
 
-        pchMessageStart[0] = 0xfa;
+        pchMessageStart[0] = 0xfb;
         pchMessageStart[1] = 0xbf;
         pchMessageStart[2] = 0xb5;
         pchMessageStart[3] = 0xda;
