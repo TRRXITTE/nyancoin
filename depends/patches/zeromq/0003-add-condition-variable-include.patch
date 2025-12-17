@@ -1,0 +1,18 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Codex <codex@example.com>
+Date: Wed, 22 Jan 2025 00:00:00 +0000
+Subject: [PATCH] zeromq: include missing <condition_variable>
+
+ZeroMQ's `condition_variable.hpp` uses `std::condition_variable_any` but
+doesn't include the standard header, which causes MinGW builds to fail
+with "condition_variable_any in namespace std does not name a type".
+Include the header explicitly to restore Windows cross-builds.
+
+--- a/src/condition_variable.hpp
++++ b/src/condition_variable.hpp
+@@
+ #include "mutex.hpp"
++#include <condition_variable>
+ #include "err.hpp"
+ 
+ namespace zmq
