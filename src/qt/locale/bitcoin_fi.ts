@@ -99,11 +99,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>These are your Dogecoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Nintondo addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>These are your Dogecoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your Nintondo addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -359,8 +359,8 @@
         <translation>Ladataan lohkoindeksiä...</translation>
     </message>
     <message>
-        <source>Send coins to a Dogecoin address</source>
-        <translation>Lähetä kolikoita Dogecoin-osoitteeseen</translation>
+        <source>Send coins to a Nintondo address</source>
+        <translation>Lähetä kolikoita Nintondo-osoitteeseen</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -383,8 +383,8 @@
         <translation>Varmista &amp;viesti...</translation>
     </message>
     <message>
-        <source>Dogecoin</source>
-        <translation>Dogecoin</translation>
+        <source>Nintondo</source>
+        <translation>Nintondo</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -404,19 +404,19 @@
     </message>
     <message>
         <source>Show or hide the main Window</source>
-        <translation>Näytä tai piilota Dogecoin-ikkuna</translation>
+        <translation>Näytä tai piilota Nintondo-ikkuna</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Suojaa yksityiset avaimet, jotka kuuluvat lompakkoosi</translation>
     </message>
     <message>
-        <source>Sign messages with your Dogecoin addresses to prove you own them</source>
-        <translation>Allekirjoita viestisi omalla Dogecoin -osoitteellasi todistaaksesi, että omistat ne</translation>
+        <source>Sign messages with your Nintondo addresses to prove you own them</source>
+        <translation>Allekirjoita viestisi omalla Nintondo -osoitteellasi todistaaksesi, että omistat ne</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Dogecoin addresses</source>
-        <translation>Varmista, että viestisi on allekirjoitettu määritetyllä Dogecoin -osoitteella</translation>
+        <source>Verify messages to ensure they were signed with specified Nintondo addresses</source>
+        <translation>Varmista, että viestisi on allekirjoitettu määritetyllä Nintondo -osoitteella</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -455,10 +455,10 @@
         <translation>&amp;Komentorivin valinnat</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Dogecoin network</source>
+        <source>%n active connection(s) to Nintondo network</source>
         <translation>
-            <numerusform>%n aktiivinen yhteys Dogecoin-verkkoon</numerusform>
-            <numerusform>%n aktiivista yhteyttä Dogecoin-verkkoon</numerusform>
+            <numerusform>%n aktiivinen yhteys Nintondo-verkkoon</numerusform>
+            <numerusform>%n aktiivista yhteyttä Nintondo-verkkoon</numerusform>
         </translation>
     </message>
     <message>
@@ -505,8 +505,8 @@
         <translation>Rahansiirtohistoria on ajan tasalla</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Dogecoin command-line options</source>
-        <translation>Näytä %1 ohjeet saadaksesi listan mahdollisista Dogecoinin komentorivivalinnoista</translation>
+        <source>Show the %1 help message to get a list with possible Nintondo command-line options</source>
+        <translation>Näytä %1 ohjeet saadaksesi listan mahdollisista Nintondoin komentorivivalinnoista</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -583,7 +583,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Import a Dogecoin private key</source>
+        <source>Import a Nintondo private key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -619,7 +619,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>A fatal error occurred. Dogecoin can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. Nintondo can no longer continue safely and will quit.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -813,7 +813,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The entered address &quot;%1&quot; is not a valid Dogecoin address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid Nintondo address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -985,8 +985,8 @@
         <translation>Tämä on ensimmäinen kerta, kun %1 on käynnistetty, joten voit valita data-hakemiston paikan.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Dogecoin block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>%1 lataa ja tallentaa kopion Dogecoinin lohkoketjusta. Vähintään %2Gt dataa tullaan tallentamaan tähän hakemistoon, ja tarve kasvaa ajan myötä. Lompakko tullaan myös tallentamaan tähän hakemistoon.</translation>
+        <source>%1 will download and store a copy of the Nintondo block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>%1 lataa ja tallentaa kopion Nintondoin lohkoketjusta. Vähintään %2Gt dataa tullaan tallentamaan tähän hakemistoon, ja tarve kasvaa ajan myötä. Lompakko tullaan myös tallentamaan tähän hakemistoon.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1192,16 +1192,16 @@
         <translation>&amp;Käytä varmistamattomia vaihtorahoja</translation>
     </message>
     <message>
-        <source>Automatically open the Dogecoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Avaa Dogecoin-asiakasohjelman portti reitittimellä automaattisesti. Tämä toimii vain, jos reitittimesi tukee UPnP:tä ja se on käytössä.</translation>
+        <source>Automatically open the Nintondo client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Avaa Nintondo-asiakasohjelman portti reitittimellä automaattisesti. Tämä toimii vain, jos reitittimesi tukee UPnP:tä ja se on käytössä.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Portin uudelleenohjaus &amp;UPnP:llä</translation>
     </message>
     <message>
-        <source>Connect to the Dogecoin network through a SOCKS5 proxy.</source>
-        <translation>Yhdistä Dogecoin-verkkoon SOCKS5-välityspalvelimen kautta.</translation>
+        <source>Connect to the Nintondo network through a SOCKS5 proxy.</source>
+        <translation>Yhdistä Nintondo-verkkoon SOCKS5-välityspalvelimen kautta.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1240,8 +1240,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Dogecoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Yhdistä Dogecoin-verkkoon erillisen SOCKS5-välityspalvelimen kautta piilotettuja Tor-palveluja varten.</translation>
+        <source>Connect to the Nintondo network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Yhdistä Nintondo-verkkoon erillisen SOCKS5-välityspalvelimen kautta piilotettuja Tor-palveluja varten.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
@@ -1355,8 +1355,8 @@
         <translation>Lomake</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Dogecoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Näytetyt tiedot eivät välttämättä ole ajantasalla. Lompakkosi synkronoituu Dogecoin-verkon kanssa automaattisesti yhteyden muodostamisen jälkeen, mutta synkronointi on vielä meneillään.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Nintondo network after a connection is established, but this process has not completed yet.</source>
+        <translation>Näytetyt tiedot eivät välttämättä ole ajantasalla. Lompakkosi synkronoituu Nintondo-verkon kanssa automaattisesti yhteyden muodostamisen jälkeen, mutta synkronointi on vielä meneillään.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1396,7 +1396,7 @@
     </message>
     <message>
         <source>Your current total balance</source>
-        <translation>Tililläsi tällä hetkellä olevien Dogecoinien määrä</translation>
+        <translation>Tililläsi tällä hetkellä olevien Nintondoien määrä</translation>
     </message>
     <message>
         <source>Your current balance in watch-only addresses</source>
@@ -1463,7 +1463,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>To see ongoing development and contribute, check out the Dogecoin Core repository on GitHub</source>
+        <source>To see ongoing development and contribute, check out the Nintondo Core repository on GitHub</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1595,7 +1595,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Send Coins</source>
-        <translation type="unfinished">Lähetä Dogecoineja</translation>
+        <translation type="unfinished">Lähetä Nintondoeja</translation>
     </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
@@ -1669,7 +1669,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Dogecoin address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid Nintondo address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1814,8 +1814,8 @@ Use this functionality with extreme caution.</source>
         <translation>Määrä</translation>
     </message>
     <message>
-        <source>Enter a Dogecoin address (e.g. %1)</source>
-        <translation>Syötä Dogecoin-osoite (esim. %1)</translation>
+        <source>Enter a Nintondo address (e.g. %1)</source>
+                <translation>Enter a Nintondo address (e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2300,8 +2300,8 @@ Use this functionality with extreme caution.</source>
         <translation>&amp;Uudelleenkäytä vastaanotto-osoitetta (ei suositella)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Dogecoin network.</source>
-        <translation>Valinnainen viesti liitetään maksupyyntöön ja näytetään avattaessa. Viestiä ei lähetetä Dogecoin-verkkoon.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Nintondo network.</source>
+        <translation>Valinnainen viesti liitetään maksupyyntöön ja näytetään avattaessa. Viestiä ei lähetetä Nintondo-verkkoon.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2454,7 +2454,7 @@ Use this functionality with extreme caution.</source>
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Lähetä Dogecoineja</translation>
+        <translation>Lähetä Nintondoeja</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -2705,7 +2705,7 @@ Use this functionality with extreme caution.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Warning: Invalid Dogecoin address</source>
+        <source>Warning: Invalid Nintondo address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2752,8 +2752,8 @@ Use this functionality with extreme caution.</source>
         <translation>Tämä on normaali maksu.</translation>
     </message>
     <message>
-        <source>The Dogecoin address to send the payment to</source>
-        <translation>Dogecoin-osoite johon maksu lähetetään</translation>
+        <source>The Nintondo address to send the payment to</source>
+        <translation>Nintondo-osoite johon maksu lähetetään</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2796,8 +2796,8 @@ Use this functionality with extreme caution.</source>
         <translation>Aseta nimi tälle osoitteelle lisätäksesi sen käytettyjen osoitteiden listalle.</translation>
     </message>
     <message>
-        <source>A message that was attached to the dogecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</source>
-        <translation>Viesti joka liitettiin dogecoin: URI:iin tallennetaan rahansiirtoon viitteeksi. Tätä viestiä ei lähetetä Dogecoin-verkkoon.</translation>
+        <source>A message that was attached to the dogecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Nintondo network.</source>
+        <translation>Viesti joka liitettiin dogecoin: URI:iin tallennetaan rahansiirtoon viitteeksi. Tätä viestiä ei lähetetä Nintondo-verkkoon.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2841,8 +2841,8 @@ Use this functionality with extreme caution.</source>
         <translation>&amp;Allekirjoita viesti</translation>
     </message>
     <message>
-        <source>The Dogecoin address to sign the message with</source>
-        <translation>Dogecoin-osoite jolla viesti allekirjoitetaan</translation>
+        <source>The Nintondo address to sign the message with</source>
+        <translation>Nintondo-osoite jolla viesti allekirjoitetaan</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2873,8 +2873,8 @@ Use this functionality with extreme caution.</source>
         <translation>Kopioi tämänhetkinen allekirjoitus leikepöydälle</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Dogecoin address</source>
-        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän Dogecoin-osoitteen</translation>
+        <source>Sign the message to prove you own this Nintondo address</source>
+        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän Nintondo-osoitteen</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2893,12 +2893,12 @@ Use this functionality with extreme caution.</source>
         <translation>&amp;Varmista viesti</translation>
     </message>
     <message>
-        <source>The Dogecoin address the message was signed with</source>
-        <translation>Dogecoin-osoite jolla viesti on allekirjoitettu</translation>
+        <source>The Nintondo address the message was signed with</source>
+        <translation>Nintondo-osoite jolla viesti on allekirjoitettu</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Dogecoin address</source>
-        <translation>Tarkista viestin allekirjoitus varmistaaksesi, että se allekirjoitettiin tietyllä Dogecoin-osoitteella</translation>
+        <source>Verify the message to ensure it was signed with the specified Nintondo address</source>
+        <translation>Tarkista viestin allekirjoitus varmistaaksesi, että se allekirjoitettiin tietyllä Nintondo-osoitteella</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3485,7 +3485,7 @@ Use this functionality with extreme caution.</source>
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation type="unfinished">Lähetä Dogecoineja</translation>
+        <translation type="unfinished">Lähetä Nintondoeja</translation>
     </message>
 </context>
 <context>
@@ -3582,8 +3582,8 @@ Use this functionality with extreme caution.</source>
         <translation>HTTP-palvelinta ei voitu käynnistää. Katso debug-lokista lisätietoja.</translation>
     </message>
     <message>
-        <source>Dogecoin Core</source>
-        <translation>Dogecoin-ydin</translation>
+        <source>Nintondo Core</source>
+        <translation>Nintondo-ydin</translation>
     </message>
     <message>
         <source>The %s developers</source>
@@ -4126,7 +4126,7 @@ Use this functionality with extreme caution.</source>
         <translation>Virhe</translation>
     </message>
     <message>
-        <source>Bitcoin Core and Dogecoin Core</source>
+        <source>Bitcoin Core and Nintondo Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

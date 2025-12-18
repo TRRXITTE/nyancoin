@@ -99,12 +99,12 @@
         <translation>Adreces de recepció</translation>
     </message>
     <message>
-        <source>These are your Dogecoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Aquestes són les vostres adreces de Dogecoin per enviar els pagaments. Sempre reviseu l&apos;import i l&apos;adreça del destinatari abans de transferir monedes.</translation>
+        <source>These are your Nintondo addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Aquestes són les vostres adreces de Nintondo per enviar els pagaments. Sempre reviseu l&apos;import i l&apos;adreça del destinatari abans de transferir monedes.</translation>
     </message>
     <message>
-        <source>These are your Dogecoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Aquestes són les vostres adreces Dogecoin per rebre pagaments. Es recomana utilitzar una adreça nova de recepció per a cada transacció.</translation>
+        <source>These are your Nintondo addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Aquestes són les vostres adreces Nintondo per rebre pagaments. Es recomana utilitzar una adreça nova de recepció per a cada transacció.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -371,8 +371,8 @@
         <translation>S&apos;estan reindexant els blocs al disc...</translation>
     </message>
     <message>
-        <source>Send coins to a Dogecoin address</source>
-        <translation>Envia monedes a una adreça Dogecoin</translation>
+        <source>Send coins to a Nintondo address</source>
+        <translation>Envia monedes a una adreça Nintondo</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -395,8 +395,8 @@
         <translation>&amp;Verifica el missatge...</translation>
     </message>
     <message>
-        <source>Dogecoin</source>
-        <translation>Dogecoin</translation>
+        <source>Nintondo</source>
+        <translation>Nintondo</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -423,12 +423,12 @@
         <translation>Encripta les claus privades pertanyents al moneder</translation>
     </message>
     <message>
-        <source>Sign messages with your Dogecoin addresses to prove you own them</source>
-        <translation>Signa el missatges amb la seva adreça de Dogecoin per provar que les poseeixes</translation>
+        <source>Sign messages with your Nintondo addresses to prove you own them</source>
+        <translation>Signa el missatges amb la seva adreça de Nintondo per provar que les poseeixes</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Dogecoin addresses</source>
-        <translation>Verifiqueu els missatges per assegurar-vos que han estat signats amb una adreça Dogecoin específica.</translation>
+        <source>Verify messages to ensure they were signed with specified Nintondo addresses</source>
+        <translation>Verifiqueu els missatges per assegurar-vos que han estat signats amb una adreça Nintondo específica.</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -467,10 +467,10 @@
         <translation>Opcions de la &amp;línia d&apos;ordres</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Dogecoin network</source>
+        <source>%n active connection(s) to Nintondo network</source>
         <translation>
-            <numerusform>%n connexió activa a la xarxa Dogecoin</numerusform>
-            <numerusform>%n connexions actives a la xarxa Dogecoin</numerusform>
+            <numerusform>%n connexió activa a la xarxa Nintondo</numerusform>
+            <numerusform>%n connexions actives a la xarxa Nintondo</numerusform>
         </translation>
     </message>
     <message>
@@ -517,8 +517,8 @@
         <translation>Al dia</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Dogecoin command-line options</source>
-        <translation>Mostra el missatge d&apos;ajuda del %1 per obtenir una llista amb les possibles opcions de línia d&apos;ordres de Dogecoin</translation>
+        <source>Show the %1 help message to get a list with possible Nintondo command-line options</source>
+        <translation>Mostra el missatge d&apos;ajuda del %1 per obtenir una llista amb les possibles opcions de línia d&apos;ordres de Nintondo</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -583,8 +583,8 @@
         <translation>El moneder està &lt;b&gt;encriptat&lt;/b&gt; i actualment &lt;b&gt;bloquejat&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Dogecoin can no longer continue safely and will quit.</source>
-        <translation>S&apos;ha produït un error fatal. Dogecoin no pot continuar amb seguretat i finalitzarà.</translation>
+        <source>A fatal error occurred. Nintondo can no longer continue safely and will quit.</source>
+        <translation>S&apos;ha produït un error fatal. Nintondo no pot continuar amb seguretat i finalitzarà.</translation>
     </message>
     <message>
         <source>&amp;Print paper wallets</source>
@@ -603,7 +603,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Import a Dogecoin private key</source>
+        <source>Import a Nintondo private key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -813,8 +813,8 @@
         <translation>Edita l&apos;adreça d&apos;enviament</translation>
     </message>
     <message>
-        <source>The entered address &quot;%1&quot; is not a valid Dogecoin address.</source>
-        <translation>L&apos;adreça introduïda «%1» no és una adreça de Dogecoin vàlida.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid Nintondo address.</source>
+        <translation>L&apos;adreça introduïda «%1» no és una adreça de Nintondo vàlida.</translation>
     </message>
     <message>
         <source>The entered address &quot;%1&quot; is already in the address book.</source>
@@ -985,8 +985,8 @@
         <translation>Com és la primera vegada que s&apos;executa el programa, podeu triar on %1 emmagatzemarà les dades.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Dogecoin block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>%1 baixarà i emmagatzemarà una còpia de la cadena de blocs de Dogecoin. Com a mínim %2GB de dades s&apos;emmagatzemaran en aquest directori, i augmentarà al llarg del temps. El moneder també s&apos;emmagatzemarà en aquest directori.</translation>
+        <source>%1 will download and store a copy of the Nintondo block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>%1 baixarà i emmagatzemarà una còpia de la cadena de blocs de Nintondo. Com a mínim %2GB de dades s&apos;emmagatzemaran en aquest directori, i augmentarà al llarg del temps. El moneder també s&apos;emmagatzemarà en aquest directori.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1192,16 +1192,16 @@
         <translation>&amp;Gasta el canvi sense confirmar</translation>
     </message>
     <message>
-        <source>Automatically open the Dogecoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Obre el port del client de Dogecoin al router de forma automàtica. Això només funciona quan el router implementa UPnP i l&apos;opció està activada.</translation>
+        <source>Automatically open the Nintondo client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Obre el port del client de Nintondo al router de forma automàtica. Això només funciona quan el router implementa UPnP i l&apos;opció està activada.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Port obert amb &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the Dogecoin network through a SOCKS5 proxy.</source>
-        <translation>Connecta a la xarxa Dogecoin a través d&apos;un proxy SOCKS5.</translation>
+        <source>Connect to the Nintondo network through a SOCKS5 proxy.</source>
+        <translation>Connecta a la xarxa Nintondo a través d&apos;un proxy SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1240,8 +1240,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Dogecoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Conectar a la red de Dogecoin a través de un proxy SOCKS5 per als serveis ocults de Tor</translation>
+        <source>Connect to the Nintondo network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Conectar a la red de Nintondo a través de un proxy SOCKS5 per als serveis ocults de Tor</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
@@ -1355,8 +1355,8 @@
         <translation>Formulari</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Dogecoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>La informació mostrada pot no estar al día. El teu moneder es sincronitza automàticament amb la xarxa Dogecoin un cop s&apos;ha establert connexió, però aquest proces no s&apos;ha completat encara.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Nintondo network after a connection is established, but this process has not completed yet.</source>
+        <translation>La informació mostrada pot no estar al día. El teu moneder es sincronitza automàticament amb la xarxa Nintondo un cop s&apos;ha establert connexió, però aquest proces no s&apos;ha completat encara.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1463,7 +1463,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>To see ongoing development and contribute, check out the Dogecoin Core repository on GitHub</source>
+        <source>To see ongoing development and contribute, check out the Nintondo Core repository on GitHub</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1669,8 +1669,8 @@ p, li { white-space: pre-wrap; }
         <translation>Adreça de pagament no vàlida %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Dogecoin address or malformed URI parameters.</source>
-        <translation>L&apos;URI no pot ser analitzat! Això pot ser a causa d&apos;una adreça de Dogecoin no vàlida o per paràmetres URI amb mal format.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Nintondo address or malformed URI parameters.</source>
+        <translation>L&apos;URI no pot ser analitzat! Això pot ser a causa d&apos;una adreça de Nintondo no vàlida o per paràmetres URI amb mal format.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1818,8 +1818,8 @@ Use this functionality with extreme caution.</source>
         <translation>Import</translation>
     </message>
     <message>
-        <source>Enter a Dogecoin address (e.g. %1)</source>
-        <translation>Introduïu una adreça de Dogecoin (p. ex. %1)</translation>
+        <source>Enter a Nintondo address (e.g. %1)</source>
+                <translation>Enter a Nintondo address (e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2304,8 +2304,8 @@ Use this functionality with extreme caution.</source>
         <translation>R&amp;eutilitza una adreça de recepció anterior (no recomanat)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Dogecoin network.</source>
-        <translation>Un missatge opcional que s&apos;adjuntarà a la sol·licitud de pagament, que es mostrarà quan s&apos;obri la sol·licitud. Nota: El missatge no s&apos;enviarà amb el pagament per la xarxa Dogecoin.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Nintondo network.</source>
+        <translation>Un missatge opcional que s&apos;adjuntarà a la sol·licitud de pagament, que es mostrarà quan s&apos;obri la sol·licitud. Nota: El missatge no s&apos;enviarà amb el pagament per la xarxa Nintondo.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2685,8 +2685,8 @@ Use this functionality with extreme caution.</source>
         <translation>Paga només la comissió necessària de %1</translation>
     </message>
     <message>
-        <source>Warning: Invalid Dogecoin address</source>
-        <translation>Avís: adreça Dogecoin no vàlida</translation>
+        <source>Warning: Invalid Nintondo address</source>
+        <translation>Avís: adreça Nintondo no vàlida</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2756,8 +2756,8 @@ Use this functionality with extreme caution.</source>
         <translation>Això és un pagament normal.</translation>
     </message>
     <message>
-        <source>The Dogecoin address to send the payment to</source>
-        <translation>L&apos;adreça Dogecoin on enviar el pagament</translation>
+        <source>The Nintondo address to send the payment to</source>
+        <translation>L&apos;adreça Nintondo on enviar el pagament</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2800,8 +2800,8 @@ Use this functionality with extreme caution.</source>
         <translation>Introduïu una etiqueta per a aquesta adreça per afegir-la a la llista d&apos;adreces utilitzades</translation>
     </message>
     <message>
-        <source>A message that was attached to the dogecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</source>
-        <translation>Un missatge que s&apos;ha adjuntat al dogecoin: URI que s&apos;emmagatzemarà amb la transacció per a la vostra referència. Nota: el missatge no s&apos;enviarà a través de la xarxa Dogecoin.</translation>
+        <source>A message that was attached to the dogecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Nintondo network.</source>
+        <translation>Un missatge que s&apos;ha adjuntat al dogecoin: URI que s&apos;emmagatzemarà amb la transacció per a la vostra referència. Nota: el missatge no s&apos;enviarà a través de la xarxa Nintondo.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2849,8 +2849,8 @@ Use this functionality with extreme caution.</source>
         <translation>Podeu signar missatges/acords amb les vostres adreces per provar que rebeu les dogecoins que s&apos;hi envien. Aneu amb compte no signar res que sigui vague o aleatori, perquè en alguns atacs de suplantació es pot provar que hi signeu la vostra identitat. Només signeu aquelles declaracions completament detallades en què hi esteu d&apos;acord. </translation>
     </message>
     <message>
-        <source>The Dogecoin address to sign the message with</source>
-        <translation>L&apos;adreça Dogecoin amb què signar el missatge</translation>
+        <source>The Nintondo address to sign the message with</source>
+        <translation>L&apos;adreça Nintondo amb què signar el missatge</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2881,8 +2881,8 @@ Use this functionality with extreme caution.</source>
         <translation>Copia la signatura actual al porta-retalls del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Dogecoin address</source>
-        <translation>Signa el missatge per provar que ets propietari d&apos;aquesta adreça Dogecoin</translation>
+        <source>Sign the message to prove you own this Nintondo address</source>
+        <translation>Signa el missatge per provar que ets propietari d&apos;aquesta adreça Nintondo</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2905,12 +2905,12 @@ Use this functionality with extreme caution.</source>
         <translation>Introduïu l&apos;adreça del receptor, el missatge (assegureu-vos de copiar els salts de línia, espais, tabuladors, etc. exactament) i signatura de sota per verificar el missatge. Tingueu cura de no llegir més en la signatura del que està al missatge signat, per evitar ser enganyat per un atac d&apos;home-en-el-mig. Tingueu en compte que això només demostra que la part que signa rep amb l&apos;adreça, i no es pot provar l&apos;enviament de qualsevol transacció!</translation>
     </message>
     <message>
-        <source>The Dogecoin address the message was signed with</source>
-        <translation>L&apos;adreça Dogecoin amb què va ser signat el missatge</translation>
+        <source>The Nintondo address the message was signed with</source>
+        <translation>L&apos;adreça Nintondo amb què va ser signat el missatge</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Dogecoin address</source>
-        <translation>Verificar el missatge per assegurar-se que ha estat signat amb una adreça Dogecoin específica</translation>
+        <source>Verify the message to ensure it was signed with the specified Nintondo address</source>
+        <translation>Verificar el missatge per assegurar-se que ha estat signat amb una adreça Nintondo específica</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3602,8 +3602,8 @@ Use this functionality with extreme caution.</source>
         <translation>No s&apos;ha pogut iniciar el servidor HTTP. Vegeu debug.log per a més detalls.</translation>
     </message>
     <message>
-        <source>Dogecoin Core</source>
-        <translation>Dogecoin Core</translation>
+        <source>Nintondo Core</source>
+        <translation>Nintondo Core</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
@@ -4086,7 +4086,7 @@ Use this functionality with extreme caution.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Bitcoin Core and Dogecoin Core</source>
+        <source>Bitcoin Core and Nintondo Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

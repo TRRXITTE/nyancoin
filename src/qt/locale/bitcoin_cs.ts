@@ -99,11 +99,11 @@
         <translation>Přijímací adresy</translation>
     </message>
     <message>
-        <source>These are your Dogecoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Nintondo addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Tohle jsou tvé dogecoinové adresy pro posílání plateb. Před odesláním mincí si vždy zkontroluj částku a cílovou adresu.</translation>
     </message>
     <message>
-        <source>These are your Dogecoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your Nintondo addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>Tohle jsou tvé dogecoinové adresy pro příjem plateb. Nezapomeň si pro každou transakci vždy vygenerovat novou adresu.</translation>
     </message>
     <message>
@@ -375,7 +375,7 @@
         <translation>Vytvářím nový index bloků na disku...</translation>
     </message>
     <message>
-        <source>Send coins to a Dogecoin address</source>
+        <source>Send coins to a Nintondo address</source>
         <translation>Pošli mince na dogecoinovou adresu</translation>
     </message>
     <message>
@@ -399,8 +399,8 @@
         <translation>&amp;Ověř zprávu...</translation>
     </message>
     <message>
-        <source>Dogecoin</source>
-        <translation>Dogecoin</translation>
+        <source>Nintondo</source>
+        <translation>Nintondo</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -427,11 +427,11 @@
         <translation>Zašifruj soukromé klíče ve své peněžence</translation>
     </message>
     <message>
-        <source>Sign messages with your Dogecoin addresses to prove you own them</source>
+        <source>Sign messages with your Nintondo addresses to prove you own them</source>
         <translation>Podepiš zprávy svými dogecoinovými adresami, čímž prokážeš, že jsi jejich vlastníkem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Dogecoin addresses</source>
+        <source>Verify messages to ensure they were signed with specified Nintondo addresses</source>
         <translation>Ověř zprávy, aby ses ujistil, že byly podepsány danými dogecoinovými adresami</translation>
     </message>
     <message>
@@ -471,7 +471,7 @@
         <translation>Ar&amp;gumenty příkazové řádky</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Dogecoin network</source>
+        <source>%n active connection(s) to Nintondo network</source>
         <translation>
             <numerusform>%n aktivní spojení do dogecoinové sítě</numerusform>
             <numerusform>%n aktivní spojení do dogecoinové sítě</numerusform>
@@ -523,8 +523,8 @@
         <translation>Aktuální</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Dogecoin command-line options</source>
-        <translation>Seznam argumentů Dogecoinu pro příkazovou řádku získáš v nápovědě %1</translation>
+        <source>Show the %1 help message to get a list with possible Nintondo command-line options</source>
+        <translation>Seznam argumentů Nintondou pro příkazovou řádku získáš v nápovědě %1</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -593,8 +593,8 @@
         <translation>Peněženka je &lt;b&gt;zašifrovaná&lt;/b&gt; a momentálně &lt;b&gt;zamčená&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Dogecoin can no longer continue safely and will quit.</source>
-        <translation>Stala se fatální chyba. Dogecoin nemůže bezpečně pokračovat v činnosti, a proto skončí.</translation>
+        <source>A fatal error occurred. Nintondo can no longer continue safely and will quit.</source>
+        <translation>Stala se fatální chyba. Nintondo nemůže bezpečně pokračovat v činnosti, a proto skončí.</translation>
     </message>
     <message>
         <source>&amp;Print paper wallets</source>
@@ -617,7 +617,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Import a Dogecoin private key</source>
+        <source>Import a Nintondo private key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -819,7 +819,7 @@
         <translation>Uprav odesílací adresu</translation>
     </message>
     <message>
-        <source>The entered address &quot;%1&quot; is not a valid Dogecoin address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid Nintondo address.</source>
         <translation>Zadaná adresa „%1“ není platná dogecoinová adresa.</translation>
     </message>
     <message>
@@ -991,7 +991,7 @@
         <translation>Tohle je poprvé, co spouštíš %1, takže si můžeš zvolit, kam bude ukládat svá data.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Dogecoin block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>%1 will download and store a copy of the Nintondo block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation>%1 bude stahovat kopii řetězce bloků. Proto bude potřeba do tohoto adresáře uložit nejméně %2 GB dat – toto číslo bude navíc v průběhu času růst. Tvá peněženka bude rovněž uložena v tomto adresáři.</translation>
     </message>
     <message>
@@ -1200,7 +1200,7 @@
         <translation>&amp;Utrácet i ještě nepotvrzené drobné</translation>
     </message>
     <message>
-        <source>Automatically open the Dogecoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the Nintondo client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>Automaticky otevře potřebný port na routeru. Tohle funguje jen za předpokladu, že tvůj router podporuje UPnP a že je UPnP povolené.</translation>
     </message>
     <message>
@@ -1208,7 +1208,7 @@
         <translation>Namapovat port přes &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the Dogecoin network through a SOCKS5 proxy.</source>
+        <source>Connect to the Nintondo network through a SOCKS5 proxy.</source>
         <translation>Připojí se do dogecoinové sítě přes SOCKS5 proxy.</translation>
     </message>
     <message>
@@ -1248,7 +1248,7 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Dogecoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <source>Connect to the Nintondo network through a separate SOCKS5 proxy for Tor hidden services.</source>
         <translation>Připojí se do dogecoinové sítě přes SOCKS5 proxy vyhrazenou pro skryté služby v Tor síti.</translation>
     </message>
     <message>
@@ -1363,7 +1363,7 @@
         <translation>Formulář</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Dogecoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Nintondo network after a connection is established, but this process has not completed yet.</source>
         <translation>Zobrazené informace nemusí být aktuální. Tvá peněženka se automaticky sesynchronizuje s dogecoinovou sítí, jakmile se s ní spojí. Zatím ale ještě není synchronizace dokončena.</translation>
     </message>
     <message>
@@ -1471,7 +1471,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>To see ongoing development and contribute, check out the Dogecoin Core repository on GitHub</source>
+        <source>To see ongoing development and contribute, check out the Nintondo Core repository on GitHub</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1677,7 +1677,7 @@ p, li { white-space: pre-wrap; }
         <translation>Neplatná platební adresa %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Dogecoin address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid Nintondo address or malformed URI parameters.</source>
         <translation>Nepodařilo se analyzovat URI! Důvodem může být neplatná dogecoinová adresa nebo poškozené parametry URI.</translation>
     </message>
     <message>
@@ -1826,8 +1826,8 @@ Use this functionality with extreme caution.</source>
         <translation>Částka</translation>
     </message>
     <message>
-        <source>Enter a Dogecoin address (e.g. %1)</source>
-        <translation>Zadej dogecoinovou adresu (např. %1)</translation>
+        <source>Enter a Nintondo address (e.g. %1)</source>
+                <translation>Enter a Nintondo address (e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2318,7 +2318,7 @@ Use this functionality with extreme caution.</source>
         <translation>&amp;Recyklovat již existující adresy (nedoporučeno)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Dogecoin network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Nintondo network.</source>
         <translation>Volitelná zpráva, která se připojí k platebnímu požadavku a která se zobrazí, když se požadavek otevře. Poznámka: tahle zpráva se neposílá s platbou po dogecoinové síti.</translation>
     </message>
     <message>
@@ -2723,7 +2723,7 @@ Use this functionality with extreme caution.</source>
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Dogecoin address</source>
+        <source>Warning: Invalid Nintondo address</source>
         <translation>Upozornění: Neplatná dogecoinová adresa</translation>
     </message>
     <message>
@@ -2790,8 +2790,8 @@ Use this functionality with extreme caution.</source>
         <translation>Tohle je normální platba.</translation>
     </message>
     <message>
-        <source>The Dogecoin address to send the payment to</source>
-        <translation>Dogecoinová adresa příjemce</translation>
+        <source>The Nintondo address to send the payment to</source>
+        <translation>Nintondoová adresa příjemce</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2834,7 +2834,7 @@ Use this functionality with extreme caution.</source>
         <translation>Zadej označení této adresy; obojí se ti pak uloží do adresáře</translation>
     </message>
     <message>
-        <source>A message that was attached to the dogecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</source>
+        <source>A message that was attached to the dogecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Nintondo network.</source>
         <translation>Zpráva, která byla připojena k dogecoin: URI a která se ti pro přehled uloží k transakci. Poznámka: Tahle zpráva se neposílá s platbou po dogecoinové síti.</translation>
     </message>
     <message>
@@ -2883,8 +2883,8 @@ Use this functionality with extreme caution.</source>
         <translation>Podepsáním zprávy/smlouvy svými adresami můžeš prokázat, že jsi na ně schopen přijmout dogecoiny. Buď opatrný a nepodepisuj nic vágního nebo náhodného; například při phishingových útocích můžeš být lákán, abys něco takového podepsal. Podepisuj pouze naprosto úplná a detailní prohlášení, se kterými souhlasíš.</translation>
     </message>
     <message>
-        <source>The Dogecoin address to sign the message with</source>
-        <translation>Dogecoinová adresa, kterou se zpráva podepíše</translation>
+        <source>The Nintondo address to sign the message with</source>
+        <translation>Nintondoová adresa, kterou se zpráva podepíše</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2915,7 +2915,7 @@ Use this functionality with extreme caution.</source>
         <translation>Zkopíruj tento podpis do schránky</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Dogecoin address</source>
+        <source>Sign the message to prove you own this Nintondo address</source>
         <translation>Podepiš zprávu, čímž prokážeš, že jsi vlastníkem této dogecoinové adresy</translation>
     </message>
     <message>
@@ -2939,11 +2939,11 @@ Use this functionality with extreme caution.</source>
         <translation>K ověření podpisu zprávy zadej adresu příjemce, zprávu (ověř si, že správně kopíruješ zalomení řádků, mezery, tabulátory apod.) a podpis. Dávej pozor na to, abys nezkopíroval do podpisu víc, než co je v samotné podepsané zprávě, abys nebyl napálen man-in-the-middle útokem. Poznamenejme však, že takto lze pouze prokázat, že podepisující je schopný na dané adrese přijmout platbu, ale není možnéprokázat, že odeslal jakoukoli transakci!</translation>
     </message>
     <message>
-        <source>The Dogecoin address the message was signed with</source>
-        <translation>Dogecoinová adresa, kterou je zpráva podepsána</translation>
+        <source>The Nintondo address the message was signed with</source>
+        <translation>Nintondoová adresa, kterou je zpráva podepsána</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Dogecoin address</source>
+        <source>Verify the message to ensure it was signed with the specified Nintondo address</source>
         <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou dogecoinovou adresou</translation>
     </message>
     <message>
@@ -3659,8 +3659,8 @@ Use this functionality with extreme caution.</source>
         <translation>Nemohu spustit HTTP server. Detaily viz v debug.log.</translation>
     </message>
     <message>
-        <source>Dogecoin Core</source>
-        <translation>Dogecoin Core</translation>
+        <source>Nintondo Core</source>
+        <translation>Nintondo Core</translation>
     </message>
     <message>
         <source>The %s developers</source>
@@ -4511,7 +4511,7 @@ Use this functionality with extreme caution.</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <source>Bitcoin Core and Dogecoin Core</source>
+        <source>Bitcoin Core and Nintondo Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
