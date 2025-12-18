@@ -29,10 +29,10 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Dogecoin-Qt</string>
+  <string>Nintondo-Qt</string>
 
   <key>CFBundleName</key>
-  <string>Dogecoin-Qt</string>
+  <string>Nintondo-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>

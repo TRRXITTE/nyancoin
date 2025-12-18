@@ -229,7 +229,7 @@ class FrameworkInfo(object):
 class ApplicationBundleInfo(object):
     def __init__(self, path):
         self.path = path
-        appName = "Dogecoin-Qt"
+        appName = "Nintondo-Qt"
         self.binaryPath = os.path.join(path, "Contents", "MacOS", appName)
         if not os.path.exists(self.binaryPath):
             raise RuntimeError("Could not find bundle binary for " + path)
@@ -368,7 +368,7 @@ def ensureBoostRuntime(bundlePath, verbose):
 
     # Ensure other binaries reference the bundled copies
     if deployed:
-        binaries = [os.path.join(bundlePath, "Contents", "MacOS", "Dogecoin-Qt")]
+        binaries = [os.path.join(bundlePath, "Contents", "MacOS", "Nintondo-Qt")]
         for root, _, files in os.walk(frameworks_dir):
             for fname in files:
                 if fname.endswith(".dylib"):
@@ -777,7 +777,7 @@ else:
 
 # ------------------------------------------------
 
-target = os.path.join("dist", "Dogecoin-Qt.app")
+target = os.path.join("dist", "Nintondo-Qt.app")
 
 if verbose >= 2:
     print("+ Copying source bundle +")
