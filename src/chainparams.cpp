@@ -77,22 +77,22 @@ public:
 
         // Blocks 0 - 144999 are conventional difficulty calculation
         consensus.nSubsidyHalvingInterval = 100000;
-        consensus.nMajorityEnforceBlockUpgrade = 1500;
-        consensus.nMajorityRejectBlockOutdated = 1900;
+        consensus.nMajorityEnforceBlockUpgrade = 100000000;
+        consensus.nMajorityRejectBlockOutdated = 100000000;
         consensus.nMajorityWindow = 2000;
         // Defer BIP34 for fresh chain bootstrap; no coinbase height enforcement initially
         consensus.BIP34Height = 100000000;
         consensus.BIP34Hash = uint256();
-        consensus.BIP65Height = 1; // 34cd2cbba4ba366f47e5aa0db5f02c19eba2adf679ceb6653ac003bdc9a0ef1f - first v4 block after the last v3 block
-        consensus.BIP66Height = 1; // 80d1364201e5df97e696c03bdd24dc885e8617b9de51e453c10a4f629b1e797a - this is the last block that could be v2, 1900 blocks past the last v2 block
+        consensus.BIP65Height = 100000000;
+        consensus.BIP66Height = 100000000;
         consensus.powLimit = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20;
-        consensus.nPowTargetTimespan = 4 * 60 * 60; // pre-digishield: 4 hours
+        consensus.nPowTargetTimespan = 60; // 
         consensus.nPowTargetSpacing = 60; // 1 minute
-        consensus.fDigishieldDifficultyCalculation = false;
-        consensus.nCoinbaseMaturity = 180;
+        consensus.fDigishieldDifficultyCalculation = true;
+        consensus.nCoinbaseMaturity = 40;
         consensus.fSimplifiedRewards = true;
-        consensus.fPowAllowMinDifficultyBlocks = false;
-        consensus.fPowAllowDigishieldMinDifficultyBlocks = false;
+        consensus.fPowAllowMinDifficultyBlocks = true;
+        consensus.fPowAllowDigishieldMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 9576; // 95% of 10,080
         consensus.nMinerConfirmationWindow = 10080; // 60 * 24 * 7 = 10,080 blocks, or one week
@@ -129,7 +129,7 @@ public:
         digishieldConsensus.fSimplifiedRewards = true;
         digishieldConsensus.fDigishieldDifficultyCalculation = true;
         digishieldConsensus.nPowTargetTimespan = 60; // post-digishield: 1 minute
-        digishieldConsensus.nCoinbaseMaturity = 240;
+        digishieldConsensus.nCoinbaseMaturity = 40;
 
         // Blocks 100000+ are AuxPoW
         auxpowConsensus = digishieldConsensus;
@@ -188,15 +188,7 @@ public:
 
         };
 
-        chainTxData = ChainTxData{
-            // Data as of block e7d4577405223918491477db725a393bcfc349d8ee63b0a4fde23cbfbfd81dea (height 5050000).
-            // Tx estimate based on average between 2023-01-16 (92752025 at 4556625) and 2024-01-16 (226128837 at 5050000)
-            1705383360, // * UNIX timestamp of last checkpoint block
-            226128837,   // * total number of transactions between genesis and last checkpoint
-                        //   (the tx=... number in the SetBestChain debug.log lines)
-            4.23        // * estimated number of transactions per second after checkpoint
-                        // (226128837 - 92752025) / 31536000 = 4.2293509
-        };
+        chainTxData = ChainTxData{0, 0, 0};
     }
 };
 static CMainParams mainParams;
@@ -218,6 +210,7 @@ public:
         consensus.nPowTargetTimespan = 4 * 60 * 60; // pre-digishield: 4 hours
         consensus.fDigishieldDifficultyCalculation = false;
         consensus.nCoinbaseMaturity = 100;
+        consensus.fSimplifiedRewards = true;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowAllowDigishieldMinDifficultyBlocks = false;
         consensus.nSubsidyHalvingInterval = 100000;
@@ -233,7 +226,6 @@ public:
         consensus.nPowTargetTimespan = 4 * 60 * 60; // pre-digishield: 4 hours
         consensus.nPowTargetSpacing = 60; // 1 minute
         consensus.fPowNoRetargeting = false;
-        consensus.fSimplifiedRewards = true;
         consensus.nRuleChangeActivationThreshold = 2880; // 2 days (note this is significantly lower than Bitcoin standard)
         consensus.nMinerConfirmationWindow = 10080; // 60 * 24 * 7 = 10,080 blocks, or one week
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
