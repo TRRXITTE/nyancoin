@@ -16,10 +16,10 @@ AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
-BITCOIN_DAEMON_NAME=dogecoind
-BITCOIN_GUI_NAME=dogecoin-qt
-BITCOIN_CLI_NAME=dogecoin-cli
-BITCOIN_TX_NAME=dogecoin-tx
+BITCOIN_DAEMON_NAME=nintondod
+BITCOIN_GUI_NAME=nintondo-qt
+BITCOIN_CLI_NAME=nintondo-cli
+BITCOIN_TX_NAME=nintondo-tx
 
 AC_CANONICAL_HOST
 
