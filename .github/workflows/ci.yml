@@ -256,7 +256,7 @@ jobs:
           path: ~/.ccache
           key: ${{ matrix.name }}-${{ env.cache-name }}-${{ hashFiles('**/configure.ac', '.github/workflows/ci.yml') }}
 
-      - name: Build Dogecoin
+      - name: Build Nintondo
         run: |
           depends/${{ matrix.host }}/native/bin/ccache --max-size=$CCACHE_SIZE
           ./autogen.sh
@@ -265,7 +265,7 @@ jobs:
       - name: Run benchmark
         if: ${{ matrix.run-bench }}
         run: |
-          src/bench/bench_dogecoin > ${{ matrix.name }}-bench.csv
+          src/bench/bench_nintondo > ${{ matrix.name }}-bench.csv
           cat ${{ matrix.name }}-bench.csv
       - name: Run tests
         if: ${{ matrix.test-script }}
@@ -285,8 +285,8 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: dogecoin-${{ github.sha }}-${{ matrix.name }}
+          name: nintondo-${{ github.sha }}-${{ matrix.name }}
           path: |
-            depends/${{ matrix.host }}/bin/dogecoin*
-            dist/Dogecoin-Qt.app
+            depends/${{ matrix.host }}/bin/*nintondo*
+            dist/Nintondo-Qt.app
             ${{ matrix.name }}-bench.csv
