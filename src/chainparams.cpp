@@ -150,7 +150,7 @@ public:
         pchMessageStart[1] = 0xe3;
         pchMessageStart[2] = 0xf7;
         pchMessageStart[3] = 0x44;
-        nDefaultPort = 58080;
+        nDefaultPort = 58000;
         nPruneAfterHeight = 100000;
 
         genesis = CreateGenesisBlock(1765969200, 12799, 0x1e0ffff0, 1, 50 * COIN);
@@ -166,8 +166,8 @@ public:
         }
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.push_back(CDNSSeedData("mainnet.nintondo.trrxitte.com", "cdns.mainnet.nintondo.trrxitte.com", true));
-        vSeeds.push_back(CDNSSeedData("mainnet.nintondo.trrxitte.com", "cdns.mainnet.nintondo.trrxitte.com"));
+        vSeeds.push_back(CDNSSeedData("vdns.nintondo.trrxitte.com", "cdns.mainnet.nintondo.trrxitte.com", true));
+        vSeeds.push_back(CDNSSeedData("vdns.nintondo.trrxitte.com", "cdns.mainnet.nintondo.trrxitte.com"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,53); // addresses start with 'N'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,65); // script addresses start with 'T'
@@ -185,7 +185,8 @@ public:
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
             (      0, uint256S("0xb0e57b4194aa1b88280f97c11fbce66482825fa622ff34dba48e86c73704a659"))
-
+            (      1000, uint256S("0xb0e57b4194aa1b88280f97c11fbce66482825fa622ff34dba48e86c73704a659"))
+            (      25000, uint256S("0xf"))
         };
 
         chainTxData = ChainTxData{0, 0, 0};
