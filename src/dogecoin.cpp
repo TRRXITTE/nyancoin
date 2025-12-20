@@ -142,18 +142,18 @@ CAmount GetDogecoinBlockSubsidy(int nHeight, const Consensus::Params& consensusP
     }
 
     // Deterministic rewards schedule
-    if (nHeight < 100000) {
-        return 400000 * COIN;
-    } else if (nHeight < 200000) {
-        return 275000 * COIN;
-    } else if (nHeight < 300000) {
-        return 144000 * COIN;
+    if (nHeight < 150000) {
+        return 1000000 * COIN;
     } else if (nHeight < 400000) {
-        return 64500 * COIN;
-    } else if (nHeight < 500000) {
-        return 32000 * COIN;
+        return 750000 * COIN;
+    } else if (nHeight < 800000) {
+        return 500000 * COIN;
+    } else if (nHeight < 1000000) {
+        return 250000 * COIN;
+    } else if (nHeight < 1500000) {
+        return 1250000 * COIN;
     }
 
-    // Constant inflation from 500k+
-    return 45000 * COIN;
+    // Constant inflation from 1500k+
+    return 75000 * COIN;
 }
