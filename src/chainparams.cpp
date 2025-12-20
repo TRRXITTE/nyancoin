@@ -147,7 +147,7 @@ public:
          * a large 32-bit integer with any alignment.
          */
         pchMessageStart[0] = 0xa4;
-        pchMessageStart[1] = 0xe3;
+        pchMessageStart[1] = 0xe4;
         pchMessageStart[2] = 0xf7;
         pchMessageStart[3] = 0x44;
         nDefaultPort = 58000;
