@@ -153,13 +153,13 @@ public:
         nDefaultPort = 58000;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1765969200, 12799, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1766062800, 971477, 0x1e0ffff0, 1, 50 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
-        if (consensus.hashGenesisBlock != uint256S("0xb0e57b4194aa1b88280f97c11fbce66482825fa622ff34dba48e86c73704a659")) {
-            fprintf(stderr, "[mainnet] Computed genesis hash: %s (expected b0e57b41...)\n", consensus.hashGenesisBlock.GetHex().c_str());
+        if (consensus.hashGenesisBlock != uint256S("0xa49732b6195e7f83cdb606877fec8f450b00621e11f49556db8af8157d77e532")) {
+            fprintf(stderr, "[mainnet] Computed genesis hash: %s (expected a49732b6...)\n", consensus.hashGenesisBlock.GetHex().c_str());
         }
         if (genesis.hashMerkleRoot != uint256S("0x2e91ef7716e16eca4805792e03e264bbc1efa2c4f5f01372e5e23fdf6fbab4c1")) {
             fprintf(stderr, "[mainnet] Computed merkle root: %s (expected 2e91ef77...)\n", genesis.hashMerkleRoot.GetHex().c_str());
