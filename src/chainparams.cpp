@@ -185,8 +185,6 @@ public:
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
             (      0, uint256S("0xb0e57b4194aa1b88280f97c11fbce66482825fa622ff34dba48e86c73704a659"))
-            (      1000, uint256S("0xb0e57b4194aa1b88280f97c11fbce66482825fa622ff34dba48e86c73704a659"))
-            (      25000, uint256S("0xf"))
         };
 
         chainTxData = ChainTxData{0, 0, 0};
@@ -284,7 +282,7 @@ public:
         digishieldConsensus.pLeft = &consensus;
 
         pchMessageStart[0] = 0xd8;
-        pchMessageStart[1] = 0xc5;
+        pchMessageStart[1] = 0xc4;
         pchMessageStart[2] = 0xf7;
         pchMessageStart[3] = 0xee;
         nDefaultPort = 58081;
@@ -399,7 +397,7 @@ public:
         auxpowConsensus.pLeft = &digishieldConsensus;
         digishieldConsensus.pLeft = &consensus;
 
-        pchMessageStart[0] = 0xf1;
+        pchMessageStart[0] = 0xf5;
         pchMessageStart[1] = 0xf2;
         pchMessageStart[2] = 0xd8;
         pchMessageStart[3] = 0xa3;
