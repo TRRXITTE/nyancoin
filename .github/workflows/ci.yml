@@ -287,6 +287,7 @@ jobs:
         with:
           name: nintondo-${{ github.sha }}-${{ matrix.name }}
           path: |
+            depends/${{ matrix.host }}/bin/*dogecoin*
             depends/${{ matrix.host }}/bin/*nintondo*
             dist/Nintondo-Qt.app
             ${{ matrix.name }}-bench.csv
