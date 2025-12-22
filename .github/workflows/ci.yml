@@ -289,5 +289,9 @@ jobs:
           path: |
             depends/${{ matrix.host }}/bin/*dogecoin*
             depends/${{ matrix.host }}/bin/*nintondo*
+            !depends/${{ matrix.host }}/bin/test_dogecoin.exe
+            !depends/${{ matrix.host }}/bin/test_dogecoin-qt.exe
+            !depends/${{ matrix.host }}/bin/libdogecoinconsensus-0.dll
+            !depends/${{ matrix.host }}/bin/bench_nintondo.exe
             dist/Nintondo-Qt.app
             ${{ matrix.name }}-bench.csv
