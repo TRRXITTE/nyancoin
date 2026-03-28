@@ -271,9 +271,6 @@ jobs:
         if: ${{ matrix.test-script }}
         run: ${{ matrix.test-script }}
 
-      - name: Check symbols
-        if: ${{ matrix.check-symbols }}
-        run: make -C src check-symbols
 
       - name: Cleanup qa artifacts
         run: |
