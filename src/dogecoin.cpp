@@ -157,3 +157,5 @@ CAmount GetDogecoinBlockSubsidy(int nHeight, const Consensus::Params& consensusP
     // Constant inflation from 1500k+
     return 75000 * COIN;
 }
+
+// Nintondo : emission curve for the first 1500k blocks, then constant inflation of 75k per block
