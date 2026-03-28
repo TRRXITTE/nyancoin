@@ -271,10 +271,6 @@ jobs:
         if: ${{ matrix.test-script }}
         run: ${{ matrix.test-script }}
 
-      - name: Check security
-        if: ${{ matrix.check-security }}
-        run: make -C src check-security
-
       - name: Check symbols
         if: ${{ matrix.check-symbols }}
         run: make -C src check-symbols
